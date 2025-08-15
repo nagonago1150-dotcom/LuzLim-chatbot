@@ -688,7 +688,6 @@ body {
     z-index: 1001;
     overflow: hidden;
     border: 2px solid #DAA520;
-    position: relative;
 }
 
 #chatbot-container::before {
@@ -704,7 +703,7 @@ body {
     opacity: 0.2;
     animation: floatPattern 40s ease-in-out infinite;
     filter: contrast(1.3) brightness(0.9);
-    z-index: 1;
+    z-index: -1;
     border-radius: 20px;
 }
 
@@ -723,7 +722,7 @@ body {
     font-family: 'Playfair Display', serif;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 
 #chatbot-close {
@@ -751,7 +750,7 @@ body {
     overflow-y: auto;
     background: transparent;
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 
 .message {
@@ -798,7 +797,7 @@ body {
     background: transparent;
     border-top: 1px solid rgba(218, 165, 32, 0.3);
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 
 .option-button {
