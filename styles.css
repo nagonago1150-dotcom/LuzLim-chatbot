@@ -630,6 +630,43 @@ body {
     z-index: 1;
 }
 
+.price-details {
+    margin: 2rem 0;
+    position: relative;
+    z-index: 2;
+}
+
+.price-details p {
+    margin: 0.8rem 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.discount-rate {
+    color: #DAA520;
+    font-weight: 700;
+    font-size: 1.4rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.continuing-discount {
+    color: #8B4513;
+    font-weight: 600;
+}
+
+.guarantee {
+    color: #228B22;
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    border: 2px solid #228B22;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    background: rgba(34, 139, 34, 0.1);
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
 .cta-button {
     display: inline-block;
     background: linear-gradient(145deg, #8B0000 0%, #DC143C 50%, #8B0000 100%);
@@ -1547,6 +1584,21 @@ body {
     .price-sub {
         font-size: 1.1rem;
         margin-left: 0.5rem;
+    }
+    
+    .price-details p {
+        font-size: 1.1rem;
+        margin: 0.6rem 0;
+    }
+    
+    .discount-rate {
+        font-size: 1.2rem;
+    }
+    
+    .guarantee {
+        font-size: 1.1rem;
+        padding: 0.6rem 1.2rem;
+        margin-top: 1rem;
     }
     
     .cta-button {
