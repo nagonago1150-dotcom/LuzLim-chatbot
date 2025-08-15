@@ -42,16 +42,35 @@ body {
     width: 100%;
     height: 100%;
     z-index: 1;
-    opacity: 0.3;
+    opacity: 0.15;
 }
 
 .botanical-pattern {
     width: 100%;
     height: 100%;
     background-image: 
-        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23666666' fill-opacity='0.15'%3E%3Cpath d='M30 45c8.284 0 15-6.716 15-15s-6.716-15-15-15-15 6.716-15 15 6.716 15 15 15zm0-25c5.523 0 10 4.477 10 10s-4.477 10-10 10-10-4.477-10-10 4.477-10 10-10z'/%3E%3Cpath d='M20 20c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5z'/%3E%3Cpath d='M40 50c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        url('botanical-pattern.jpeg'),
+        url('botanical-pattern.jpeg');
+    background-repeat: repeat, repeat;
+    background-size: 400px 300px, 600px 450px;
+    background-position: 0 0, 200px 150px;
+    animation: floatPattern 30s ease-in-out infinite;
+    filter: contrast(1.2) brightness(0.9);
+}
+
+.botanical-pattern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('botanical-pattern.jpeg');
     background-repeat: repeat;
-    animation: floatPattern 20s ease-in-out infinite;
+    background-size: 300px 225px;
+    background-position: 100px 75px;
+    opacity: 0.4;
+    animation: floatPattern 25s ease-in-out infinite reverse;
 }
 
 
@@ -204,16 +223,20 @@ body {
 
 @keyframes floatPattern {
     0%, 100% {
-        transform: translateY(0px) rotate(0deg);
+        transform: translateX(0px) translateY(0px) scale(1);
+        opacity: 0.15;
     }
     25% {
-        transform: translateY(-10px) rotate(1deg);
+        transform: translateX(-5px) translateY(-8px) scale(1.02);
+        opacity: 0.12;
     }
     50% {
-        transform: translateY(-5px) rotate(0deg);
+        transform: translateX(3px) translateY(-12px) scale(0.98);
+        opacity: 0.18;
     }
     75% {
-        transform: translateY(-15px) rotate(-1deg);
+        transform: translateX(-2px) translateY(-6px) scale(1.01);
+        opacity: 0.14;
     }
 }
 
