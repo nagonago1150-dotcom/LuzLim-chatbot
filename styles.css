@@ -796,14 +796,14 @@ body {
     filter: drop-shadow(0 6px 12px rgba(218, 165, 32, 0.5));
 }
 
-/* 効果実証セクション */
-.effectiveness-proof {
+/* 効果・メリットセクション */
+.benefits-section {
     padding: 5rem 0;
     background: linear-gradient(180deg, #000000 0%, #1a1a1a 50%, #000000 100%);
     position: relative;
 }
 
-.effectiveness-proof::before {
+.benefits-section::before {
     content: '';
     position: absolute;
     top: 0;
@@ -814,7 +814,7 @@ body {
                 radial-gradient(circle at 75% 25%, rgba(218, 165, 32, 0.1) 0%, transparent 50%);
 }
 
-.effectiveness-proof h3 {
+.benefits-section h3 {
     text-align: center;
     font-family: 'Playfair Display', serif;
     font-size: 2.5rem;
@@ -826,103 +826,184 @@ body {
     z-index: 1;
 }
 
-/* Before/After比較セクション */
-.before-after-container {
+.benefits-container {
     position: relative;
     z-index: 1;
 }
 
-.comparison-images {
+.benefit-visual {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
-    gap: 2rem;
+    gap: 3rem;
     align-items: center;
     margin-bottom: 4rem;
 }
 
-.before-section,
-.after-section {
+.concern-illustration,
+.solution-illustration {
+    background: linear-gradient(145deg, #1a1a1a 0%, #2a2a2a 100%);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    text-align: center;
+    border: 1px solid rgba(218, 165, 32, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+.concern-illustration {
+    border-color: rgba(220, 20, 60, 0.3);
+}
+
+.solution-illustration {
+    border-color: rgba(218, 165, 32, 0.3);
+}
+
+.concern-icon,
+.solution-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.concern-illustration h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #DC143C;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.solution-illustration h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #DAA520;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.concern-list,
+.solution-list {
+    text-align: left;
+}
+
+.concern-item,
+.solution-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.concern-item {
+    background: linear-gradient(145deg, rgba(220, 20, 60, 0.1) 0%, rgba(139, 0, 0, 0.1) 100%);
+}
+
+.solution-item {
+    background: linear-gradient(145deg, rgba(218, 165, 32, 0.1) 0%, rgba(184, 134, 11, 0.1) 100%);
+}
+
+.concern-dot {
+    width: 8px;
+    height: 8px;
+    background: #DC143C;
+    border-radius: 50%;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.solution-check {
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(145deg, #DAA520 0%, #FFD700 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #000000;
+    margin-right: 1rem;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+}
+
+.concern-item span:last-child,
+.solution-item span:last-child {
+    color: #cccccc;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* 科学的根拠セクション */
+.scientific-evidence {
+    background: linear-gradient(145deg, rgba(26, 26, 26, 0.8) 0%, rgba(42, 42, 42, 0.8) 100%);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    border: 1px solid rgba(218, 165, 32, 0.2);
     text-align: center;
 }
 
-.comparison-label {
+.scientific-evidence h4 {
     font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.before-label {
-    color: #DC143C;
-    text-shadow: 1px 1px 4px rgba(220, 20, 60, 0.5);
-}
-
-.after-label {
+    font-size: 2rem;
     color: #DAA520;
-    text-shadow: 1px 1px 4px rgba(218, 165, 32, 0.5);
-}
-
-.comparison-img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 15px;
-    transition: transform 0.3s ease;
-}
-
-.before-image {
-    border: 3px solid rgba(220, 20, 60, 0.4);
-}
-
-.after-image {
-    border: 3px solid rgba(218, 165, 32, 0.4);
-}
-
-.before-image:hover .comparison-img,
-.after-image:hover .comparison-img {
-    transform: scale(1.03);
-}
-
-.before-overlay {
-    background: linear-gradient(
-        45deg,
-        transparent 0%,
-        rgba(220, 20, 60, 0.2) 30%,
-        rgba(139, 0, 0, 0.1) 70%,
-        transparent 100%
-    );
-}
-
-.after-overlay {
-    background: linear-gradient(
-        45deg,
-        transparent 0%,
-        rgba(218, 165, 32, 0.2) 30%,
-        rgba(255, 215, 0, 0.1) 70%,
-        transparent 100%
-    );
-}
-
-.success-tag {
-    background: linear-gradient(145deg, rgba(218, 165, 32, 0.9) 0%, rgba(255, 215, 0, 0.9) 100%);
-    color: #000000;
-    padding: 0.8rem 1.5rem;
-    border-radius: 25px;
+    margin-bottom: 2rem;
     font-weight: 600;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 15px rgba(218, 165, 32, 0.4);
 }
 
-.image-description {
-    margin-top: 1rem;
-    font-size: 0.95rem;
-    color: #ccc;
+.evidence-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.evidence-item {
+    background: linear-gradient(145deg, rgba(42, 42, 42, 0.5) 0%, rgba(26, 26, 26, 0.5) 100%);
+    border-radius: 15px;
+    padding: 2rem 1rem;
+    border: 1px solid rgba(218, 165, 32, 0.1);
+    transition: all 0.3s ease;
+}
+
+.evidence-item:hover {
+    transform: translateY(-5px);
+    border-color: rgba(218, 165, 32, 0.3);
+    box-shadow: 0 8px 20px rgba(218, 165, 32, 0.2);
+}
+
+.evidence-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #DAA520;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(45deg, #DAA520, #FFD700, #DAA520);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.evidence-label {
+    font-size: 1.1rem;
+    color: #f5f5f5;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.evidence-description {
+    font-size: 0.9rem;
+    color: #cccccc;
+    font-weight: 300;
+}
+
+.evidence-note {
+    font-size: 0.9rem;
+    color: #999;
     font-style: italic;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(218, 165, 32, 0.2);
 }
 
 /* 矢印とバッジ */
@@ -970,58 +1051,6 @@ body {
     font-size: 0.8rem;
     color: #ccc;
     font-weight: 400;
-}
-
-/* 効果まとめセクション */
-.effectiveness-summary {
-    text-align: center;
-    padding: 3rem 2rem;
-    background: linear-gradient(145deg, rgba(26, 26, 26, 0.8) 0%, rgba(42, 42, 42, 0.8) 100%);
-    border-radius: 20px;
-    border: 1px solid rgba(218, 165, 32, 0.2);
-}
-
-.effectiveness-summary h4 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    color: #DAA520;
-    margin-bottom: 2rem;
-    font-weight: 600;
-}
-
-.effect-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
-}
-
-.effect-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    padding: 1rem;
-    background: linear-gradient(145deg, rgba(42, 42, 42, 0.5) 0%, rgba(26, 26, 26, 0.5) 100%);
-    border-radius: 10px;
-    border: 1px solid rgba(218, 165, 32, 0.1);
-    transition: all 0.3s ease;
-}
-
-.effect-item:hover {
-    transform: translateY(-3px);
-    border-color: rgba(218, 165, 32, 0.3);
-    box-shadow: 0 6px 15px rgba(218, 165, 32, 0.2);
-}
-
-.effect-icon {
-    font-size: 1.5rem;
-}
-
-.effect-item span {
-    font-size: 1rem;
-    color: #ccc;
-    font-weight: 500;
 }
 
 .proof-image {
@@ -1214,17 +1243,17 @@ body {
         font-size: 2rem;
     }
     
-    /* Before/After セクション */
-    .effectiveness-proof {
+    /* 効果セクション */
+    .benefits-section {
         padding: 3rem 0;
     }
     
-    .effectiveness-proof h3 {
+    .benefits-section h3 {
         font-size: 2rem;
         margin-bottom: 3rem;
     }
     
-    .comparison-images {
+    .benefit-visual {
         grid-template-columns: 1fr;
         gap: 2rem;
         text-align: center;
@@ -1236,50 +1265,46 @@ body {
         margin: 1rem 0;
     }
     
-    .before-section {
+    .concern-illustration {
         order: 1;
     }
     
-    .after-section {
+    .solution-illustration {
         order: 3;
     }
     
-    .comparison-label {
-        font-size: 1.2rem;
-        margin-bottom: 0.8rem;
+    .concern-illustration h4,
+    .solution-illustration h4 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
     }
     
-    .comparison-img {
-        height: 250px;
+    .concern-illustration,
+    .solution-illustration {
+        padding: 2rem 1.5rem;
     }
     
-    .image-description {
-        font-size: 0.9rem;
-        margin-top: 0.8rem;
-    }
-    
-    .effectiveness-summary {
+    .scientific-evidence {
         padding: 2rem 1.5rem;
         margin-top: 2rem;
     }
     
-    .effectiveness-summary h4 {
+    .scientific-evidence h4 {
         font-size: 1.6rem;
         margin-bottom: 1.5rem;
     }
     
-    .effect-grid {
+    .evidence-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
     
-    .effect-item {
-        padding: 0.8rem;
-        gap: 0.8rem;
+    .evidence-item {
+        padding: 1.5rem 1rem;
     }
     
-    .effect-item span {
-        font-size: 0.9rem;
+    .evidence-number {
+        font-size: 2.5rem;
     }
     
     /* CTAセクション */
@@ -1367,8 +1392,14 @@ body {
         font-size: 0.9rem;
     }
     
-    .comparison-img {
-        height: 220px;
+    .concern-illustration,
+    .solution-illustration {
+        padding: 1.5rem 1rem;
+    }
+    
+    .concern-illustration h4,
+    .solution-illustration h4 {
+        font-size: 1.3rem;
     }
     
     .kalcala-badge {
@@ -1379,8 +1410,12 @@ body {
         font-size: 1.1rem;
     }
     
-    .effectiveness-summary {
+    .scientific-evidence {
         padding: 1.5rem 1rem;
+    }
+    
+    .evidence-number {
+        font-size: 2rem;
     }
     
     .price-main {
