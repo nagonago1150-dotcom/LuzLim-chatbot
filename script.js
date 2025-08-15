@@ -338,6 +338,107 @@ class ScrollAnimations {
     }
 }
 
+// インタラクティブタブシステム
+class InteractiveFeatures {
+    constructor() {
+        this.init();
+    }
+    
+    init() {
+        this.initTabs();
+        this.initProgressRings();
+    }
+    
+    initTabs() {
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabPanels = document.querySelectorAll('.tab-panel');
+        
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetTab = button.dataset.tab;
+                
+                // Remove active class from all buttons and panels
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabPanels.forEach(panel => panel.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding panel
+                button.classList.add('active');
+                document.getElementById(targetTab).classList.add('active');
+                
+                // Restart animations for the active panel
+                this.animateActiveTab(targetTab);
+            });
+        });
+    }
+    
+    animateActiveTab(tabId) {
+        const activePanel = document.getElementById(tabId);
+        const benefitItems = activePanel.querySelectorAll('.benefit-item');
+        
+        // Reset and restart benefit item animations
+        benefitItems.forEach((item, index) => {
+            item.style.animation = 'none';
+            item.offsetHeight; // Trigger reflow
+            item.style.animation = `fadeInLeft 0.6s ease-out ${index * 0.1}s both`;
+        });
+        
+        // Animate progress ring if present
+        const progressCircle = activePanel.querySelector('.progress-circle');
+        if (progressCircle) {
+            progressCircle.style.animation = 'none';
+            progressCircle.offsetHeight; // Trigger reflow
+            progressCircle.style.animation = 'progressAnimation 2s ease-in-out';
+        }
+        
+        // Animate counter if present
+        const counterElement = activePanel.querySelector('[data-counter]');
+        if (counterElement) {
+            this.animateCounter(counterElement);
+        }
+    }
+    
+    initProgressRings() {
+        const progressCircles = document.querySelectorAll('.progress-circle');
+        progressCircles.forEach(circle => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        circle.style.animation = 'progressAnimation 2s ease-in-out';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            observer.observe(circle);
+        });
+    }
+    
+    animateCounter(element) {
+        const target = parseInt(element.dataset.counter);
+        const duration = 1500;
+        const start = performance.now();
+        
+        const animate = (currentTime) => {
+            const elapsed = currentTime - start;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            // Easing function for smooth animation
+            const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+            const currentValue = Math.floor(easeOutQuart * target);
+            
+            element.textContent = currentValue + '%';
+            
+            if (progress < 1) {
+                requestAnimationFrame(animate);
+            } else {
+                element.textContent = target + '%';
+            }
+        };
+        
+        requestAnimationFrame(animate);
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     const chatbot = new KalcalaChatbot();
     
@@ -346,6 +447,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // スクロールアニメーション初期化
     new ScrollAnimations();
+    
+    // インタラクティブ機能初期化
+    new InteractiveFeatures();
     
     document.addEventListener('click', function(e) {
         if (e.target.classList.contains('option-button')) {

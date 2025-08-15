@@ -33,37 +33,129 @@
         <section class="features">
             <div class="container">
                 <h3>3つの機能性関与成分</h3>
-                <div class="feature-grid">
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2C12.8 2 13.5 2.7 13.5 3.5V4.5C15.3 4.9 16.7 6.3 17.1 8.1H18.1C18.9 8.1 19.6 8.8 19.6 9.6S18.9 11.1 18.1 11.1H17.1C16.7 12.9 15.3 14.3 13.5 14.7V15.7C13.5 16.5 12.8 17.2 12 17.2S10.5 16.5 10.5 15.7V14.7C8.7 14.3 7.3 12.9 6.9 11.1H5.9C5.1 11.1 4.4 10.4 4.4 9.6S5.1 8.1 5.9 8.1H6.9C7.3 6.3 8.7 4.9 10.5 4.5V3.5C10.5 2.7 11.2 2 12 2Z" fill="#DAA520"/>
-                            </svg>
-                        </div>
-                        <h4>ブラックジンジャー由来ポリメトキシフラボン</h4>
-                        <p>BMIが高めの方のお腹の脂肪を減らすのを助けます</p>
+                <div class="feature-tabs">
+                    <div class="tab-buttons">
+                        <button class="tab-button active" data-tab="black-ginger">
+                            <span class="tab-icon">🔥</span>
+                            ブラックジンジャー
+                        </button>
+                        <button class="tab-button" data-tab="piperine">
+                            <span class="tab-icon">🦵</span>
+                            ヒハツ由来ピペリン
+                        </button>
+                        <button class="tab-button" data-tab="doctor">
+                            <span class="tab-icon">👨‍⚕️</span>
+                            医師推奨
+                        </button>
                     </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L2 7V10C2 16 6 21.5 12 23C18 21.5 22 16 22 10V7L12 2Z" fill="#DAA520"/>
-                            </svg>
+                    
+                    <div class="tab-content">
+                        <div class="tab-panel active" id="black-ginger">
+                            <div class="feature-detail">
+                                <div class="feature-visual">
+                                    <div class="ingredient-circle">
+                                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 2C12.8 2 13.5 2.7 13.5 3.5V4.5C15.3 4.9 16.7 6.3 17.1 8.1H18.1C18.9 8.1 19.6 8.8 19.6 9.6S18.9 11.1 18.1 11.1H17.1C16.7 12.9 15.3 14.3 13.5 14.7V15.7C13.5 16.5 12.8 17.2 12 17.2S10.5 16.5 10.5 15.7V14.7C8.7 14.3 7.3 12.9 6.9 11.1H5.9C5.1 11.1 4.4 10.4 4.4 9.6S5.1 8.1 5.9 8.1H6.9C7.3 6.3 8.7 4.9 10.5 4.5V3.5C10.5 2.7 11.2 2 12 2Z" fill="#DAA520"/>
+                                        </svg>
+                                    </div>
+                                    <div class="progress-ring">
+                                        <svg width="120" height="120">
+                                            <circle cx="60" cy="60" r="50" stroke="#2a2a2a" stroke-width="4" fill="none"/>
+                                            <circle cx="60" cy="60" r="50" stroke="#DAA520" stroke-width="4" fill="none" 
+                                                    stroke-dasharray="314" stroke-dashoffset="157" class="progress-circle"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="feature-info">
+                                    <h4>ブラックジンジャー由来ポリメトキシフラボン</h4>
+                                    <div class="benefit-list">
+                                        <div class="benefit-item">
+                                            <span class="benefit-icon">✓</span>
+                                            <span>BMIが高めの方の脂肪燃焼をサポート</span>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <span class="benefit-icon">✓</span>
+                                            <span>お腹周りの脂肪を効率的に減少</span>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <span class="benefit-icon">✓</span>
+                                            <span>基礎代謝の向上をサポート</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <h4>ヒハツ由来ピペリン</h4>
-                        <p>夕方の脚のむくみを軽減し、冷えの軽減をサポート</p>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" fill="#DAA520"/>
-                            </svg>
+                        
+                        <div class="tab-panel" id="piperine">
+                            <div class="feature-detail">
+                                <div class="feature-visual">
+                                    <div class="ingredient-circle">
+                                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 2L2 7V10C2 16 6 21.5 12 23C18 21.5 22 16 22 10V7L12 2Z" fill="#DAA520"/>
+                                        </svg>
+                                    </div>
+                                    <div class="progress-ring">
+                                        <svg width="120" height="120">
+                                            <circle cx="60" cy="60" r="50" stroke="#2a2a2a" stroke-width="4" fill="none"/>
+                                            <circle cx="60" cy="60" r="50" stroke="#DAA520" stroke-width="4" fill="none" 
+                                                    stroke-dasharray="314" stroke-dashoffset="94" class="progress-circle"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div class="feature-info">
+                                    <h4>ヒハツ由来ピペリン</h4>
+                                    <div class="benefit-list">
+                                        <div class="benefit-item">
+                                            <span class="benefit-icon">✓</span>
+                                            <span>夕方の脚のむくみを軽減</span>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <span class="benefit-icon">✓</span>
+                                            <span>末梢血流量を増加させる</span>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <span class="benefit-icon">✓</span>
+                                            <span>冷えの軽減をサポート</span>
+                                        </div>
+                                    </div>
+                                    <p class="benefit-note">※病的ではない一過性のむくみ</p>
+                                </div>
+                            </div>
                         </div>
-                        <h4>医師推奨</h4>
-                        <div class="doctor-stat">
-                            <span class="counter-number" data-counter="92">0%</span>
-                            <span class="counter-label">の医師が継続を勧めたい</span>
+                        
+                        <div class="tab-panel" id="doctor">
+                            <div class="feature-detail">
+                                <div class="feature-visual">
+                                    <div class="ingredient-circle doctor-circle">
+                                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" fill="#DAA520"/>
+                                        </svg>
+                                    </div>
+                                    <div class="doctor-stat-visual">
+                                        <span class="counter-number" data-counter="92">0%</span>
+                                        <span class="counter-label">医師が推奨</span>
+                                    </div>
+                                </div>
+                                <div class="feature-info">
+                                    <h4>現役医師による推奨</h4>
+                                    <div class="benefit-list">
+                                        <div class="benefit-item">
+                                            <span class="benefit-icon">✓</span>
+                                            <span>92.9%の医師が継続を勧めたい</span>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <span class="benefit-icon">✓</span>
+                                            <span>科学的根拠に基づいた成分配合</span>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <span class="benefit-icon">✓</span>
+                                            <span>安全性と効果の両立を実現</span>
+                                        </div>
+                                    </div>
+                                    <p class="benefit-note">※Dr's Review事務局調べ</p>
+                                </div>
+                            </div>
                         </div>
-                        <p class="stat-note">※Dr's Review事務局調べ</p>
                     </div>
                 </div>
             </div>
