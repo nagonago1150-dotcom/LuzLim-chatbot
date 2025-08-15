@@ -293,7 +293,7 @@ class ScrollAnimations {
         }, observerOptions);
         
         // アニメーション対象要素を監視
-        document.querySelectorAll('.feature-item, .hero h2, .hero p, .cta-section h3, .effectiveness-proof h3, .proof-image, .solution-point').forEach(el => {
+        document.querySelectorAll('.hero h2, .hero p, .features h3, .tab-button, .effectiveness-proof h3, .comparison-label, .proof-image, .effectiveness-summary, .cta-section h3').forEach(el => {
             observer.observe(el);
         });
     }

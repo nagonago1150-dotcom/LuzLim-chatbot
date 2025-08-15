@@ -12,6 +12,10 @@ body {
     color: #1a1a1a;
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #000000 100%);
     background-attachment: fixed;
+    /* パフォーマンス最適化 */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 .container {
@@ -1071,7 +1075,33 @@ body {
     }
 }
 
+/* タブレット対応 */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 30px;
+    }
+    
+    .hero-header h1 {
+        font-size: 4rem;
+    }
+    
+    .feature-detail {
+        padding: 2.5rem;
+        gap: 2.5rem;
+    }
+    
+    .comparison-images {
+        gap: 2.5rem;
+    }
+}
+
+/* モバイル対応 */
 @media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+    
+    /* ヒーローセクション */
     .hero-header {
         height: 80vh;
         min-height: 500px;
@@ -1080,17 +1110,20 @@ body {
     .hero-header h1 {
         font-size: 3rem;
         letter-spacing: 2px;
+        margin-bottom: 0.8rem;
     }
     
     .hero-header .subtitle {
         font-size: 1.2rem;
         letter-spacing: 1px;
+        margin-bottom: 1.5rem;
     }
     
     .ingredient-highlights {
         flex-direction: column;
         align-items: center;
         gap: 1rem;
+        margin-top: 2rem;
     }
     
     .ingredient-tag {
@@ -1098,69 +1131,36 @@ body {
         font-size: 1rem;
     }
     
-    #chatbot-container {
-        width: calc(100vw - 40px);
-        right: 20px;
-        left: 20px;
-        height: 450px;
+    /* 通常ヒーローセクション */
+    .hero {
+        padding: 3rem 0;
     }
     
     .hero h2 {
         font-size: 2rem;
+        margin-bottom: 1rem;
     }
     
-    .feature-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+    .hero p {
+        font-size: 1.1rem;
     }
     
-    .price-main {
-        font-size: 3.5rem;
+    /* 機能セクション */
+    .features {
+        padding: 3rem 0;
     }
     
-    .cta-button {
-        padding: 1.2rem 2.5rem;
-        font-size: 1.2rem;
+    .features h3 {
+        font-size: 2rem;
+        margin-bottom: 3rem;
     }
     
-    /* Before/After セクション モバイル対応 */
-    .comparison-images {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        text-align: center;
-    }
-    
-    .arrow-container {
-        order: 2;
-        transform: rotate(90deg);
-    }
-    
-    .before-section {
-        order: 1;
-    }
-    
-    .after-section {
-        order: 3;
-    }
-    
-    .comparison-img {
-        height: 250px;
-    }
-    
-    .effect-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    
-    .effectiveness-summary h4 {
-        font-size: 1.6rem;
-    }
-    
-    /* タブ機能 モバイル対応 */
+    /* タブ機能 */
     .tab-buttons {
         flex-direction: column;
         align-items: center;
         gap: 0.8rem;
+        margin-bottom: 2rem;
     }
     
     .tab-button {
@@ -1168,6 +1168,11 @@ body {
         max-width: 300px;
         justify-content: center;
         padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .tab-content {
+        min-height: 350px;
     }
     
     .feature-detail {
@@ -1187,6 +1192,7 @@ body {
     
     .feature-info h4 {
         font-size: 1.6rem;
+        margin-bottom: 1.5rem;
     }
     
     .ingredient-circle {
@@ -1206,5 +1212,250 @@ body {
     
     .doctor-stat-visual .counter-number {
         font-size: 2rem;
+    }
+    
+    /* Before/After セクション */
+    .effectiveness-proof {
+        padding: 3rem 0;
+    }
+    
+    .effectiveness-proof h3 {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+    
+    .comparison-images {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .arrow-container {
+        order: 2;
+        transform: rotate(90deg);
+        margin: 1rem 0;
+    }
+    
+    .before-section {
+        order: 1;
+    }
+    
+    .after-section {
+        order: 3;
+    }
+    
+    .comparison-label {
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .comparison-img {
+        height: 250px;
+    }
+    
+    .image-description {
+        font-size: 0.9rem;
+        margin-top: 0.8rem;
+    }
+    
+    .effectiveness-summary {
+        padding: 2rem 1.5rem;
+        margin-top: 2rem;
+    }
+    
+    .effectiveness-summary h4 {
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .effect-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .effect-item {
+        padding: 0.8rem;
+        gap: 0.8rem;
+    }
+    
+    .effect-item span {
+        font-size: 0.9rem;
+    }
+    
+    /* CTAセクション */
+    .cta-section {
+        padding: 3rem 0;
+    }
+    
+    .cta-section h3 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .price-main {
+        font-size: 3.5rem;
+    }
+    
+    .price-sub {
+        font-size: 1.1rem;
+        margin-left: 0.5rem;
+    }
+    
+    .cta-button {
+        padding: 1.2rem 2.5rem;
+        font-size: 1.2rem;
+        margin-top: 2rem;
+    }
+    
+    /* チャットボット */
+    #chatbot-container {
+        width: calc(100vw - 40px);
+        right: 20px;
+        left: 20px;
+        height: 450px;
+        bottom: 85px;
+    }
+    
+    #chatbot-trigger {
+        width: 55px;
+        height: 55px;
+        font-size: 22px;
+    }
+}
+
+/* 小さいモバイル対応 */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero-header h1 {
+        font-size: 2.5rem;
+        letter-spacing: 1px;
+    }
+    
+    .hero-header .subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .ingredient-tag {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    
+    .tab-button {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.85rem;
+        max-width: 280px;
+    }
+    
+    .feature-detail {
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+    
+    .feature-info h4 {
+        font-size: 1.4rem;
+    }
+    
+    .benefit-item {
+        padding: 0.6rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .benefit-item span:last-child {
+        font-size: 0.9rem;
+    }
+    
+    .comparison-img {
+        height: 220px;
+    }
+    
+    .kalcala-badge {
+        padding: 0.8rem 1.2rem;
+    }
+    
+    .kalcala-badge span {
+        font-size: 1.1rem;
+    }
+    
+    .effectiveness-summary {
+        padding: 1.5rem 1rem;
+    }
+    
+    .price-main {
+        font-size: 3rem;
+    }
+    
+    .cta-button {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+    
+    #chatbot-container {
+        height: 400px;
+    }
+}
+
+/* アクセシビリティ改善 */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .progress-circle {
+        animation: none !important;
+    }
+    
+    .transform-arrow {
+        animation: none !important;
+    }
+}
+
+/* 高コントラストモード対応 */
+@media (prefers-contrast: high) {
+    .tab-button {
+        border-width: 3px;
+    }
+    
+    .cta-button {
+        border: 3px solid #ffffff;
+    }
+    
+    .feature-item {
+        border-width: 2px;
+    }
+}
+
+/* フォーカス表示の改善 */
+.tab-button:focus,
+.cta-button:focus,
+#chatbot-trigger:focus,
+.option-button:focus {
+    outline: 3px solid #DAA520;
+    outline-offset: 2px;
+}
+
+/* 印刷対応 */
+@media print {
+    .hero-header {
+        height: auto;
+        min-height: auto;
+        background: white;
+        color: black;
+    }
+    
+    #chatbot-container,
+    #chatbot-trigger {
+        display: none !important;
+    }
+    
+    .cta-button {
+        background: white;
+        color: black;
+        border: 2px solid black;
     }
 }
