@@ -54,25 +54,6 @@ body {
     animation: floatPattern 20s ease-in-out infinite;
 }
 
-.package-showcase {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 3;
-    opacity: 0.8;
-}
-
-.package-image {
-    width: 200px;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
-
-.package-image:hover {
-    transform: scale(1.05);
-}
 
 .hero-overlay {
     position: absolute;
@@ -106,11 +87,11 @@ body {
 }
 
 .botanical-frame {
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 248, 248, 0.8) 100%);
-    border: 2px solid rgba(0, 0, 0, 0.8);
+    background: linear-gradient(145deg, rgba(0, 0, 0, 0.95) 0%, rgba(20, 20, 20, 0.9) 100%);
+    border: 2px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     padding: 2.5rem;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     position: relative;
     overflow: hidden;
@@ -123,7 +104,7 @@ body {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.05'%3E%3Cpath d='M20 20c5.523 0 10-4.477 10-10S25.523 0 20 0 10 4.477 10 10s4.477 10 10 10z'/%3E%3C/g%3E%3C/svg%3E") repeat;
+    background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M20 20c5.523 0 10-4.477 10-10S25.523 0 20 0 10 4.477 10 10s4.477 10 10 10z'/%3E%3C/g%3E%3C/svg%3E") repeat;
     animation: rotatePattern 30s linear infinite;
     z-index: -1;
 }
@@ -133,7 +114,7 @@ body {
     font-size: 4.5rem;
     margin-bottom: 0.5rem;
     font-weight: 700;
-    color: #000000;
+    color: #ffffff;
     letter-spacing: 3px;
     animation: fadeInUp 1.5s ease-out;
     text-transform: uppercase;
@@ -141,7 +122,7 @@ body {
 
 .hero-header .subtitle {
     font-size: 1.2rem;
-    color: #333333;
+    color: #cccccc;
     font-weight: 400;
     letter-spacing: 1.5px;
     margin-bottom: 1rem;
@@ -159,17 +140,18 @@ body {
 }
 
 .detail-item {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(255, 255, 255, 0.2);
     color: #ffffff;
     padding: 0.3rem 0.8rem;
     border-radius: 12px;
     font-size: 0.9rem;
     font-weight: 500;
     letter-spacing: 0.5px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .detail-separator {
-    color: #666666;
+    color: #cccccc;
     font-weight: bold;
 }
 
@@ -1245,14 +1227,6 @@ body {
         min-height: 500px;
     }
     
-    .package-showcase {
-        top: 10px;
-        right: 10px;
-    }
-    
-    .package-image {
-        width: 120px;
-    }
     
     .botanical-frame {
         padding: 1.5rem;
