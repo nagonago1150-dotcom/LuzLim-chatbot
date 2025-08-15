@@ -516,6 +516,389 @@ body {
     font-style: italic;
 }
 
+/* スクロールアニメーション */
+.feature-item,
+.hero h2,
+.hero p,
+.cta-section h3 {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-item.animate-in,
+.hero h2.animate-in,
+.hero p.animate-in,
+.cta-section h3.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.feature-item:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.feature-item:nth-child(3) {
+    transition-delay: 0.4s;
+}
+
+/* カウンターアニメーション */
+.doctor-stat {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.counter-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #DAA520;
+    display: block;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    background: linear-gradient(45deg, #DAA520, #FFD700, #DAA520);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.counter-label {
+    font-size: 1.1rem;
+    color: #cccccc;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.stat-note {
+    font-size: 0.9rem;
+    color: #999;
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+/* パーティクル背景の調整 */
+body {
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* ホバーエフェクトの強化 */
+.feature-item {
+    transform-style: preserve-3d;
+}
+
+.feature-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(218, 165, 32, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.feature-item:hover::after {
+    opacity: 1;
+}
+
+/* 機能アイコン */
+.feature-icon {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.feature-icon svg {
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 4px 8px rgba(218, 165, 32, 0.3));
+}
+
+.feature-item:hover .feature-icon svg {
+    transform: scale(1.1) rotateY(15deg);
+    filter: drop-shadow(0 6px 12px rgba(218, 165, 32, 0.5));
+}
+
+/* 効果実証セクション */
+.effectiveness-proof {
+    padding: 5rem 0;
+    background: linear-gradient(180deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+    position: relative;
+}
+
+.effectiveness-proof::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 25% 75%, rgba(139, 0, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 25%, rgba(218, 165, 32, 0.1) 0%, transparent 50%);
+}
+
+.effectiveness-proof h3 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 4rem;
+    color: #DAA520;
+    font-weight: 600;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    position: relative;
+    z-index: 1;
+}
+
+/* Before/After比較セクション */
+.before-after-container {
+    position: relative;
+    z-index: 1;
+}
+
+.comparison-images {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.before-section,
+.after-section {
+    text-align: center;
+}
+
+.comparison-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.before-label {
+    color: #DC143C;
+    text-shadow: 1px 1px 4px rgba(220, 20, 60, 0.5);
+}
+
+.after-label {
+    color: #DAA520;
+    text-shadow: 1px 1px 4px rgba(218, 165, 32, 0.5);
+}
+
+.comparison-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.before-image {
+    border: 3px solid rgba(220, 20, 60, 0.4);
+}
+
+.after-image {
+    border: 3px solid rgba(218, 165, 32, 0.4);
+}
+
+.before-image:hover .comparison-img,
+.after-image:hover .comparison-img {
+    transform: scale(1.03);
+}
+
+.before-overlay {
+    background: linear-gradient(
+        45deg,
+        transparent 0%,
+        rgba(220, 20, 60, 0.2) 30%,
+        rgba(139, 0, 0, 0.1) 70%,
+        transparent 100%
+    );
+}
+
+.after-overlay {
+    background: linear-gradient(
+        45deg,
+        transparent 0%,
+        rgba(218, 165, 32, 0.2) 30%,
+        rgba(255, 215, 0, 0.1) 70%,
+        transparent 100%
+    );
+}
+
+.success-tag {
+    background: linear-gradient(145deg, rgba(218, 165, 32, 0.9) 0%, rgba(255, 215, 0, 0.9) 100%);
+    color: #000000;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(218, 165, 32, 0.4);
+}
+
+.image-description {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    color: #ccc;
+    font-style: italic;
+}
+
+/* 矢印とバッジ */
+.arrow-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.transform-arrow {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
+.kalcala-badge {
+    background: linear-gradient(145deg, #1a1a1a 0%, #2a2a2a 100%);
+    border: 2px solid #DAA520;
+    border-radius: 15px;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.kalcala-badge span {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #DAA520;
+    margin-bottom: 0.3rem;
+}
+
+.kalcala-badge small {
+    font-size: 0.8rem;
+    color: #ccc;
+    font-weight: 400;
+}
+
+/* 効果まとめセクション */
+.effectiveness-summary {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(145deg, rgba(26, 26, 26, 0.8) 0%, rgba(42, 42, 42, 0.8) 100%);
+    border-radius: 20px;
+    border: 1px solid rgba(218, 165, 32, 0.2);
+}
+
+.effectiveness-summary h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #DAA520;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.effect-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.effect-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: linear-gradient(145deg, rgba(42, 42, 42, 0.5) 0%, rgba(26, 26, 26, 0.5) 100%);
+    border-radius: 10px;
+    border: 1px solid rgba(218, 165, 32, 0.1);
+    transition: all 0.3s ease;
+}
+
+.effect-item:hover {
+    transform: translateY(-3px);
+    border-color: rgba(218, 165, 32, 0.3);
+    box-shadow: 0 6px 15px rgba(218, 165, 32, 0.2);
+}
+
+.effect-icon {
+    font-size: 1.5rem;
+}
+
+.effect-item span {
+    font-size: 1rem;
+    color: #ccc;
+    font-weight: 500;
+}
+
+.proof-image {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+}
+
+.problem-tag {
+    background: linear-gradient(145deg, rgba(139, 0, 0, 0.9) 0%, rgba(220, 20, 60, 0.9) 100%);
+    color: #f5f5f5;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    border: 2px solid rgba(218, 165, 32, 0.6);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(139, 0, 0, 0.4);
+}
+
+.effectiveness-note {
+    font-size: 0.9rem;
+    color: #999;
+    font-style: italic;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(218, 165, 32, 0.2);
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 @media (max-width: 768px) {
     .hero-header {
         height: 80vh;
@@ -566,5 +949,43 @@ body {
     .cta-button {
         padding: 1.2rem 2.5rem;
         font-size: 1.2rem;
+    }
+    
+    /* Before/After セクション モバイル対応 */
+    .comparison-images {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+    
+    .arrow-container {
+        order: 2;
+        transform: rotate(90deg);
+    }
+    
+    .before-section {
+        order: 1;
+    }
+    
+    .after-section {
+        order: 3;
+    }
+    
+    .comparison-img {
+        height: 250px;
+    }
+    
+    .effect-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .effectiveness-summary h4 {
+        font-size: 1.6rem;
+    }
+    
+    .feature-icon svg {
+        width: 50px;
+        height: 50px;
     }
 }

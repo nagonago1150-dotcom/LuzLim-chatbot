@@ -198,8 +198,154 @@ class KalcalaChatbot {
     }
 }
 
+// パーティクルアニメーション
+class ParticleSystem {
+    constructor() {
+        this.canvas = document.createElement('canvas');
+        this.ctx = this.canvas.getContext('2d');
+        this.particles = [];
+        this.init();
+    }
+    
+    init() {
+        this.canvas.style.position = 'fixed';
+        this.canvas.style.top = '0';
+        this.canvas.style.left = '0';
+        this.canvas.style.width = '100%';
+        this.canvas.style.height = '100%';
+        this.canvas.style.pointerEvents = 'none';
+        this.canvas.style.zIndex = '1';
+        this.canvas.style.opacity = '0.6';
+        document.body.appendChild(this.canvas);
+        
+        this.resize();
+        this.createParticles();
+        this.animate();
+        
+        window.addEventListener('resize', () => this.resize());
+    }
+    
+    resize() {
+        this.canvas.width = window.innerWidth;
+        this.canvas.height = window.innerHeight;
+    }
+    
+    createParticles() {
+        for (let i = 0; i < 50; i++) {
+            this.particles.push({
+                x: Math.random() * this.canvas.width,
+                y: Math.random() * this.canvas.height,
+                size: Math.random() * 3 + 1,
+                speedX: (Math.random() - 0.5) * 0.5,
+                speedY: (Math.random() - 0.5) * 0.5,
+                opacity: Math.random() * 0.5 + 0.2,
+                color: `hsl(${45 + Math.random() * 15}, 70%, 60%)`
+            });
+        }
+    }
+    
+    animate() {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        
+        this.particles.forEach(particle => {
+            particle.x += particle.speedX;
+            particle.y += particle.speedY;
+            
+            if (particle.x < 0) particle.x = this.canvas.width;
+            if (particle.x > this.canvas.width) particle.x = 0;
+            if (particle.y < 0) particle.y = this.canvas.height;
+            if (particle.y > this.canvas.height) particle.y = 0;
+            
+            this.ctx.beginPath();
+            this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+            this.ctx.fillStyle = particle.color;
+            this.ctx.globalAlpha = particle.opacity;
+            this.ctx.fill();
+        });
+        
+        requestAnimationFrame(() => this.animate());
+    }
+}
+
+// スクロールアニメーション
+class ScrollAnimations {
+    constructor() {
+        this.init();
+    }
+    
+    init() {
+        this.observeElements();
+        this.initCounterAnimation();
+    }
+    
+    observeElements() {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+        
+        // アニメーション対象要素を監視
+        document.querySelectorAll('.feature-item, .hero h2, .hero p, .cta-section h3, .effectiveness-proof h3, .proof-image, .solution-point').forEach(el => {
+            observer.observe(el);
+        });
+    }
+    
+    initCounterAnimation() {
+        const counterElements = document.querySelectorAll('[data-counter]');
+        
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    this.animateCounter(entry.target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        counterElements.forEach(el => {
+            counterObserver.observe(el);
+        });
+    }
+    
+    animateCounter(element) {
+        const target = parseInt(element.dataset.counter);
+        const duration = 2000;
+        const start = performance.now();
+        
+        const animate = (currentTime) => {
+            const elapsed = currentTime - start;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            const currentValue = Math.floor(progress * target);
+            element.textContent = currentValue + '%';
+            
+            if (progress < 1) {
+                requestAnimationFrame(animate);
+            } else {
+                element.textContent = target + '%';
+            }
+        };
+        
+        requestAnimationFrame(animate);
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     const chatbot = new KalcalaChatbot();
+    
+    // パーティクルシステム初期化
+    new ParticleSystem();
+    
+    // スクロールアニメーション初期化
+    new ScrollAnimations();
     
     document.addEventListener('click', function(e) {
         if (e.target.classList.contains('option-button')) {
