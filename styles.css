@@ -30,14 +30,14 @@ body {
 .hero-header {
     position: relative;
     height: 100vh;
-    min-height: 600px;
+    min-height: 700px;
+    max-height: 900px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 50%, #f5f5f5 100%);
-    padding-top: 60px;
-    padding-bottom: 40px;
+    padding: 80px 0 60px 0;
 }
 
 .botanical-background {
@@ -101,12 +101,13 @@ body {
     z-index: 4;
     text-align: center;
     color: #1a1a1a;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 40px;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
     min-height: 80vh;
 }
 
@@ -119,7 +120,7 @@ body {
     background: linear-gradient(145deg, rgba(0, 0, 0, 0.95) 0%, rgba(20, 20, 20, 0.9) 100%);
     border: 2px solid rgba(218, 165, 32, 0.3);
     border-radius: 25px;
-    padding: 2.5rem;
+    padding: 3rem 2.5rem;
     box-shadow: 
         0 20px 60px rgba(0, 0, 0, 0.4),
         0 0 0 1px rgba(218, 165, 32, 0.1),
@@ -128,6 +129,8 @@ body {
     position: relative;
     overflow: hidden;
     transform: translateZ(0);
+    margin: 0 auto;
+    max-width: 700px;
 }
 
 .botanical-frame::before {
@@ -144,17 +147,18 @@ body {
 
 .hero-header h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 4.5rem;
-    margin-bottom: 1rem;
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
     font-weight: 700;
     color: #ffffff;
-    letter-spacing: 4px;
+    letter-spacing: 3px;
     animation: fadeInUp 1.5s ease-out;
     text-transform: uppercase;
     text-shadow: 
         0 4px 8px rgba(0, 0, 0, 0.8),
         0 0 30px rgba(218, 165, 32, 0.3);
     position: relative;
+    line-height: 1.2;
 }
 
 .hero-header h1::after {
@@ -170,24 +174,24 @@ body {
 }
 
 .hero-header .subtitle {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: #DAA520;
     font-weight: 700;
-    letter-spacing: 1px;
-    margin-bottom: 2.5rem;
+    letter-spacing: 0.8px;
+    margin-bottom: 2rem;
     animation: fadeInUp 1.5s ease-out 0.3s both;
     text-shadow: 
         1px 1px 3px rgba(0, 0, 0, 0.7),
         0 0 20px rgba(218, 165, 32, 0.4);
-    line-height: 1.5;
-    padding: 0 1rem;
+    line-height: 1.4;
+    padding: 0 0.5rem;
 }
 
 .product-features {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem;
-    margin-bottom: 2.5rem;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
     animation: fadeInUp 1.5s ease-out 0.6s both;
     padding: 0 0.5rem;
 }
@@ -1736,13 +1740,48 @@ body {
 }
 
 /* タブレット対応 */
+/* 大画面での調整 */
+@media (min-width: 1400px) {
+    .hero-header {
+        max-height: 1000px;
+    }
+    
+    .botanical-frame {
+        max-width: 800px;
+        padding: 4rem 3rem;
+    }
+    
+    .hero-header h1 {
+        font-size: 4.5rem;
+    }
+    
+    .hero-header .subtitle {
+        font-size: 1.8rem;
+    }
+}
+
 @media (max-width: 1024px) {
     .container {
         padding: 0 30px;
     }
     
+    .hero-header {
+        min-height: 650px;
+        padding: 60px 0 50px 0;
+    }
+    
     .hero-header h1 {
-        font-size: 4rem;
+        font-size: 3.5rem;
+        letter-spacing: 2px;
+    }
+    
+    .hero-header .subtitle {
+        font-size: 1.4rem;
+    }
+    
+    .botanical-frame {
+        padding: 2.5rem 2rem;
+        max-width: 600px;
     }
     
     .feature-detail {
