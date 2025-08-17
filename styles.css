@@ -532,6 +532,7 @@ body {
     grid-template-columns: auto 1fr;
     gap: 3rem;
     align-items: center;
+    overflow: hidden;
 }
 
 .feature-visual {
@@ -539,10 +540,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
     margin: 0 auto;
     flex-shrink: 0;
+    overflow: hidden;
 }
 
 .ingredient-circle {
@@ -581,8 +583,8 @@ body {
 }
 
 .progress-ring svg {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
 }
 
 .progress-circle {
@@ -613,6 +615,7 @@ body {
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
+    overflow: hidden;
 }
 
 .doctor-recommend-img {
@@ -1690,9 +1693,10 @@ body {
     
     .feature-visual {
         order: 1;
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
         margin: 0 auto;
+        overflow: hidden;
     }
     
     .feature-info {
@@ -1705,8 +1709,9 @@ body {
     }
     
     .feature-visual {
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
+        overflow: hidden;
     }
     
     .ingredient-circle {
@@ -1720,8 +1725,8 @@ body {
     }
     
     .progress-ring svg {
-        width: 80px;
-        height: 80px;
+        width: 100px;
+        height: 100px;
     }
     
     .doctor-stat-visual .counter-number {
