@@ -163,7 +163,7 @@ class KalcalaChatbot {
     }
     
     redirectToPurchase() {
-        window.open('#purchase', '_blank');
+        window.open('https://shop.sain-clarte.com/kalcala/15_nensyo2_mu_ka.lp_ishi/sp.html', '_blank');
     }
     
     handleSecondaryChoice(choiceId) {
@@ -466,7 +466,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     document.querySelector('.cta-button').addEventListener('click', function(e) {
-        e.preventDefault();
-        alert('購入ページに遷移します（実際の実装では購入フォームページに遷移）');
+        // CTAボタンは既にhrefで適切なURLに設定されているため、デフォルト動作を許可
+        // e.preventDefault(); を削除
     });
 });
