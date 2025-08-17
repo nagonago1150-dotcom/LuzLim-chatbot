@@ -667,7 +667,7 @@ body {
 
 .tab-content {
     position: relative;
-    min-height: auto;
+    min-height: 500px;
 }
 
 .tab-panel {
@@ -2239,6 +2239,10 @@ body {
         gap: 0.3rem;
         margin-bottom: 0.8rem;
     }
+    
+    .tab-content {
+        min-height: 400px;
+    }
 }
 
 /* デスクトップ調整 */
@@ -2266,6 +2270,10 @@ body {
     .product-features {
         gap: 0.4rem;
         margin-bottom: 1rem;
+    }
+    
+    .tab-content {
+        min-height: 450px;
     }
 }
 
@@ -2295,6 +2303,10 @@ body {
     .product-features {
         gap: 0.5rem;
         margin-bottom: 1.3rem;
+    }
+    
+    .tab-content {
+        min-height: 500px;
     }
 }
 
