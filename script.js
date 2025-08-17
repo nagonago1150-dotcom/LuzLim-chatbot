@@ -13,13 +13,11 @@ class KalcalaChatbot {
     }
     
     init() {
-        this.chatTrigger.addEventListener('click', () => this.openChat());
-        this.chatClose.addEventListener('click', () => this.closeChat());
-        
-        setTimeout(() => {
+        this.chatTrigger.addEventListener('click', () => {
             this.openChat();
             this.showInitialMessage();
-        }, 2000);
+        });
+        this.chatClose.addEventListener('click', () => this.closeChat());
     }
     
     openChat() {
@@ -68,6 +66,11 @@ class KalcalaChatbot {
     }
     
     showInitialMessage() {
+        // メッセージが既に表示されている場合はスキップ
+        if (this.messagesContainer.children.length > 0) {
+            return;
+        }
+        
         this.addMessage('こんにちは！KALCALAについて知りたいことはありませんか？');
         
         setTimeout(() => {
@@ -465,8 +468,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    document.querySelector('.cta-button').addEventListener('click', function(e) {
-        // CTAボタンは既にhrefで適切なURLに設定されているため、デフォルト動作を許可
-        // e.preventDefault(); を削除
+    // 相談ボタンでチャットボットを開く
+    document.getElementById('consultation-trigger').addEventListener('click', function(e) {
+        e.preventDefault();
+        chatbot.openChat();
+        chatbot.showInitialMessage();
     });
 });
