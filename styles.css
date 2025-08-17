@@ -16,6 +16,9 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    /* スムーズスクロール */
+    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 .container {
@@ -407,6 +410,29 @@ body {
     padding: 5rem 0;
     text-align: center;
     position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(218, 165, 32, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(218, 165, 32, 0.08) 0%, transparent 50%);
+    animation: heroFloat 12s ease-in-out infinite;
+    z-index: 1;
+}
+
+@keyframes heroFloat {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    25% { transform: translateY(-15px) scale(1.02); }
+    50% { transform: translateY(-25px) scale(1); }
+    75% { transform: translateY(-10px) scale(0.98); }
 }
 
 .hero::before {
@@ -427,7 +453,18 @@ body {
     font-weight: 600;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
     position: relative;
-    z-index: 1;
+    z-index: 2;
+    background: linear-gradient(45deg, #DAA520, #FFD700, #DAA520);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: textShimmer 3s ease-in-out infinite;
+}
+
+@keyframes textShimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
 }
 
 .hero p {
@@ -436,7 +473,10 @@ body {
     font-weight: 300;
     letter-spacing: 0.5px;
     position: relative;
-    z-index: 1;
+    z-index: 2;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2rem;
+    line-height: 1.6;
 }
 
 .features {
@@ -453,6 +493,24 @@ body {
     color: #DAA520;
     font-weight: 600;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    position: relative;
+    background: linear-gradient(45deg, #DAA520, #FFD700, #DAA520);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: titleGlow 4s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+    0%, 100% { 
+        background-position: 0% 50%; 
+        filter: drop-shadow(0 0 5px rgba(218, 165, 32, 0.3));
+    }
+    50% { 
+        background-position: 100% 50%; 
+        filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.5));
+    }
 }
 
 /* インタラクティブタブ */
@@ -503,6 +561,16 @@ body {
     border-color: #FFD700;
     box-shadow: 0 6px 20px rgba(218, 165, 32, 0.4);
     transform: translateY(-2px);
+    animation: activeTabPulse 2s ease-in-out infinite;
+}
+
+@keyframes activeTabPulse {
+    0%, 100% { 
+        box-shadow: 0 6px 20px rgba(218, 165, 32, 0.4);
+    }
+    50% { 
+        box-shadow: 0 8px 25px rgba(255, 215, 0, 0.6);
+    }
 }
 
 .tab-button:hover:not(.active) {
@@ -766,6 +834,17 @@ body {
     position: relative;
     z-index: 2;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #2a2a2a, #DAA520, #2a2a2a);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: ctaTitleShine 3s ease-in-out infinite;
+}
+
+@keyframes ctaTitleShine {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
 }
 
 .price {
@@ -783,8 +862,48 @@ body {
     letter-spacing: 2px;
     display: inline-block;
     background: linear-gradient(45deg, #DAA520, #FFD700, #DAA520);
+    background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: priceGlow 2s ease-in-out infinite;
+    position: relative;
+}
+
+.price-main::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.2) 0%, transparent 70%);
+    animation: priceHalo 3s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes priceGlow {
+    0%, 100% { 
+        background-position: 0% 50%;
+        filter: drop-shadow(0 0 10px rgba(218, 165, 32, 0.5));
+    }
+    50% { 
+        background-position: 100% 50%;
+        filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8));
+    }
+}
+
+@keyframes priceHalo {
+    0%, 100% { 
+        opacity: 0.3;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% { 
+        opacity: 0.6;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
     background-clip: text;
 }
 
@@ -860,9 +979,24 @@ body {
 
 .cta-button.primary {
     background: linear-gradient(145deg, #8B0000 0%, #DC143C 50%, #8B0000 100%);
+    background-size: 200% 200%;
     color: #f5f5f5;
     border: 2px solid #DAA520;
     box-shadow: 0 6px 20px rgba(139, 0, 0, 0.4);
+    animation: ctaButtonPulse 4s ease-in-out infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes ctaButtonPulse {
+    0%, 100% { 
+        background-position: 0% 50%;
+        box-shadow: 0 6px 20px rgba(139, 0, 0, 0.4);
+    }
+    50% { 
+        background-position: 100% 50%;
+        box-shadow: 0 8px 25px rgba(220, 20, 60, 0.6);
+    }
 }
 
 .cta-button.consultation {
@@ -879,8 +1013,29 @@ body {
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s ease;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
+    z-index: 1;
+}
+
+.cta-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.cta-button:active::after {
+    width: 200px;
+    height: 200px;
 }
 
 .cta-button:hover::before {
@@ -1236,6 +1391,17 @@ body {
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
     position: relative;
     z-index: 1;
+    background: linear-gradient(45deg, #DAA520, #FFD700, #B8860B);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: sectionTitleFlow 5s ease-in-out infinite;
+}
+
+@keyframes sectionTitleFlow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
 }
 
 .benefits-container {
@@ -1412,9 +1578,41 @@ body {
     color: #DAA520;
     margin-bottom: 0.5rem;
     background: linear-gradient(45deg, #DAA520, #FFD700, #DAA520);
+    background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    animation: numberShine 3s ease-in-out infinite;
+    position: relative;
+}
+
+.evidence-number::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(218, 165, 32, 0.1) 0%, transparent 70%);
+    animation: numberGlow 4s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes numberShine {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes numberGlow {
+    0%, 100% { 
+        opacity: 0.2;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% { 
+        opacity: 0.4;
+        transform: translate(-50%, -50%) scale(1.2);
+    }
 }
 
 .evidence-label {
@@ -1680,10 +1878,20 @@ body {
     .hero h2 {
         font-size: 2rem;
         margin-bottom: 1rem;
+        animation-duration: 2s;
     }
     
     .hero p {
         font-size: 1.1rem;
+    }
+    
+    /* モバイル版アニメーション最適化 */
+    @media (prefers-reduced-motion: reduce) {
+        * {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
     }
     
     /* 機能セクション */
