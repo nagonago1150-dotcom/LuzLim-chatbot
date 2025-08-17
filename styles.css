@@ -1713,7 +1713,7 @@ body {
     }
     
     .tab-content {
-        min-height: 350px;
+        min-height: 320px;
     }
     
     .feature-detail {
@@ -1725,8 +1725,8 @@ body {
     
     .feature-visual {
         order: 1;
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
         margin: 0 auto;
         overflow: hidden;
     }
@@ -1740,25 +1740,76 @@ body {
         margin-bottom: 1.5rem;
     }
     
+    .ingredient-circle {
+        width: 60px;
+        height: 60px;
+        border-width: 1.5px;
+    }
+    
+    .ingredient-image {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .progress-ring svg {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .progress-ring {
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    
+    /* 成分アイコンの詳細調整 */
+    .ingredient-circle img {
+        object-fit: cover;
+        border-radius: 50%;
+    }
+    
     .feature-visual {
-        width: 120px;
-        height: 120px;
-        overflow: hidden;
+        position: relative;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+}
+
+/* 極小画面対応 */
+@media (max-width: 480px) {
+    .feature-visual {
+        width: 90px;
+        height: 90px;
     }
     
     .ingredient-circle {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .ingredient-image {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .progress-ring svg {
         width: 70px;
         height: 70px;
     }
     
-    .ingredient-image {
-        width: 50px;
-        height: 50px;
+    .progress-ring {
+        transform: translate(-50%, -50%) scale(0.7);
     }
     
-    .progress-ring svg {
-        width: 100px;
-        height: 100px;
+    .tab-content {
+        min-height: 300px;
+    }
+    
+    .doctor-recommendation-image {
+        max-width: 250px;
+    }
+    
+    .doctor-recommend-img {
+        max-width: 230px;
     }
     
     .doctor-stat-visual .counter-number {
@@ -1928,11 +1979,14 @@ body {
     }
     
     .doctor-recommendation-image {
-        max-width: 320px;
+        max-width: 280px;
+        margin: 0 auto;
     }
     
     .doctor-recommend-img {
-        max-width: 300px;
+        max-width: 260px;
+        width: 100%;
+        height: auto;
     }
     
     .benefit-item {
