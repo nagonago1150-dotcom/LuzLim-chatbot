@@ -667,7 +667,7 @@ body {
 
 .tab-content {
     position: relative;
-    min-height: 400px;
+    min-height: auto;
 }
 
 .tab-panel {
@@ -2336,30 +2336,36 @@ body {
 @media (max-width: 768px) {
     .container {
         padding: 0 20px;
+        margin: 0 auto;
+        width: 100%;
+        box-sizing: border-box;
     }
     
     /* ヒーローセクション */
     .hero-header {
-        height: 100vh;
-        min-height: 600px;
-        padding-top: 80px;
-        padding-bottom: 60px;
+        min-height: 100vh;
+        height: auto;
+        padding: 60px 0 40px 0;
+        max-height: none;
     }
     
     .hero-content {
         min-height: auto;
-        padding: 0 15px;
+        padding: 0 20px;
         justify-content: center;
+        height: auto;
     }
     
     .brand-section {
-        margin-bottom: 1.5rem;
+        margin-bottom: 0;
     }
     
     .botanical-frame {
-        padding: 1.8rem 1.5rem;
-        margin: 0 15px;
+        padding: 2rem 1.8rem;
+        margin: 0 auto;
         border-radius: 20px;
+        max-width: 100%;
+        width: calc(100% - 40px);
     }
     
     .hero-header h1 {
@@ -2473,7 +2479,8 @@ body {
     
     /* 機能セクション */
     .features {
-        padding: 3rem 0;
+        padding: 3rem 0 2rem 0;
+        margin-bottom: 0;
     }
     
     .features h3 {
@@ -2498,11 +2505,12 @@ body {
     }
     
     .tab-content {
-        min-height: 450px;
+        min-height: auto;
     }
     
     .tab-panel {
         position: relative;
+        min-height: auto;
         height: auto;
         min-height: 420px;
     }
@@ -2559,6 +2567,8 @@ body {
     
     .progress-ring {
         transform: translate(-50%, -50%) scale(0.8);
+        animation: none !important;
+        filter: none !important;
     }
     
     /* 成分アイコンの詳細調整 */
@@ -2599,14 +2609,16 @@ body {
     
     .progress-ring {
         transform: translate(-50%, -50%) scale(0.7);
+        animation: none !important;
+        filter: none !important;
     }
     
     .tab-content {
-        min-height: 420px;
+        min-height: auto;
     }
     
     .tab-panel {
-        min-height: 400px;
+        min-height: auto;
     }
     
     .doctor-recommendation-image {
@@ -2657,12 +2669,14 @@ body {
     
     /* 効果セクション */
     .benefits-section {
-        padding: 3rem 0;
+        padding: 2.5rem 0;
+        margin-top: 0;
     }
     
     .benefits-section h3 {
         font-size: 2rem;
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
+        margin-top: 0;
     }
     
     .benefit-visual {
