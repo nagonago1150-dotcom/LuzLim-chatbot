@@ -28,6 +28,15 @@ class KalcalaChatbot {
     closeChat() {
         this.chatContainer.classList.remove('open');
         this.chatTrigger.style.display = 'flex';
+        // チャット履歴をリセット
+        this.resetChat();
+    }
+    
+    resetChat() {
+        this.messagesContainer.innerHTML = '';
+        this.optionsContainer.innerHTML = '';
+        this.currentState = 'initial';
+        this.selectedConcern = null;
     }
     
     addMessage(content, isBot = true, isHTML = false) {
@@ -45,7 +54,14 @@ class KalcalaChatbot {
         
         messageDiv.appendChild(contentDiv);
         this.messagesContainer.appendChild(messageDiv);
-        this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
+        
+        // スムーズスクロール
+        setTimeout(() => {
+            this.messagesContainer.scrollTo({
+                top: this.messagesContainer.scrollHeight,
+                behavior: 'smooth'
+            });
+        }, 100);
     }
     
     showOptions(options) {
@@ -58,6 +74,7 @@ class KalcalaChatbot {
                 button.classList.add('cta-option');
             }
             button.textContent = option.text;
+            button.dataset.optionId = option.id;
             button.addEventListener('click', () => {
                 this.handleOptionClick(option);
             });
@@ -71,14 +88,17 @@ class KalcalaChatbot {
             return;
         }
         
-        this.addMessage('こんにちは！どのようなお悩みですか？');
+        this.addMessage('こんにちは！KALCALAサポートです😊');
         
         setTimeout(() => {
-            this.showOptions([
-                { id: 'fat', text: 'お腹の脂肪が気になる' },
-                { id: 'swelling', text: 'むくみが気になる' },
-                { id: 'cold', text: '冷えが気になる' }
-            ]);
+            this.addMessage('どのようなお悩みでお困りですか？');
+            setTimeout(() => {
+                this.showOptions([
+                    { id: 'fat', text: 'お腹の脂肪が気になる' },
+                    { id: 'swelling', text: 'むくみが気になる' },
+                    { id: 'cold', text: '冷えが気になる' }
+                ]);
+            }, 800);
         }, 1000);
     }
     
@@ -88,7 +108,13 @@ class KalcalaChatbot {
         this.optionsContainer.innerHTML = '';
         
         setTimeout(() => {
-            this.handleUserChoice(option.id);
+            if (option.id === 'purchase') {
+                this.handlePurchaseAction();
+            } else if (['more_info', 'other_concerns'].includes(option.id)) {
+                this.handleSecondaryChoice(option.id);
+            } else {
+                this.handleUserChoice(option.id);
+            }
         }, 500);
     }
     
@@ -97,21 +123,35 @@ class KalcalaChatbot {
         
         switch (choiceId) {
             case 'fat':
-                this.addMessage('お腹の脂肪にお悩みなんですね。KALCALAなら脂肪燃焼をサポートできます！');
-                break;
+                this.addMessage('お腹の脂肪にお悩みなんですね。');
+                setTimeout(() => {
+                    this.addMessage('KALCALAのブラックジンジャー由来成分が脂肪燃焼をサポートしますよ！✨');
+                    setTimeout(() => {
+                        this.showSpecialOffer();
+                    }, 1200);
+                }, 1000);
+                return;
                 
             case 'swelling':
-                this.addMessage('むくみにお悩みなんですね。KALCALAなら6時間後に44%軽減できます！');
-                break;
+                this.addMessage('むくみにお悩みなんですね。');
+                setTimeout(() => {
+                    this.addMessage('KALCALAなら6時間後にむくみを44%軽減できます！👍');
+                    setTimeout(() => {
+                        this.showSpecialOffer();
+                    }, 1200);
+                }, 1000);
+                return;
                 
             case 'cold':
-                this.addMessage('冷えにお悩みなんですね。KALCALAなら血流改善で冷えを軽減できます！');
-                break;
+                this.addMessage('冷えにお悩みなんですね。');
+                setTimeout(() => {
+                    this.addMessage('KALCALAのヒハツ由来成分が血流改善で冷えを軽減できます！🔥');
+                    setTimeout(() => {
+                        this.showSpecialOffer();
+                    }, 1200);
+                }, 1000);
+                return;
         }
-        
-        setTimeout(() => {
-            this.showSpecialOffer();
-        }, 1500);
     }
     
     showSecondaryOptions() {
@@ -122,36 +162,41 @@ class KalcalaChatbot {
     }
     
     showSpecialOffer() {
-        this.addMessage('今なら特別キャンペーン中です！');
+        this.addMessage('そんなあなたに朗報です！🎉');
         
         setTimeout(() => {
-            // 画像を表示
-            const imageDiv = document.createElement('div');
-            imageDiv.className = 'message bot';
-            const imageContent = document.createElement('div');
-            imageContent.className = 'message-content';
-            const img = document.createElement('img');
-            img.src = 'hero-main-image.jpg';
-            img.alt = 'KALCALA特別キャンペーン';
-            img.style.width = '100%';
-            img.style.borderRadius = '8px';
-            imageContent.appendChild(img);
-            imageDiv.appendChild(imageContent);
-            this.messagesContainer.appendChild(imageDiv);
-            this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
-        }, 1000);
-        
-        setTimeout(() => {
-            this.addMessage('初回83%OFF、たった500円でお試しできます！');
+            this.addMessage('今なら特別キャンペーン中です！');
             setTimeout(() => {
-                this.showFinalOptions();
-            }, 1500);
-        }, 2500);
+                // 画像を表示
+                const imageDiv = document.createElement('div');
+                imageDiv.className = 'message bot';
+                const imageContent = document.createElement('div');
+                imageContent.className = 'message-content';
+                const img = document.createElement('img');
+                img.src = 'hero-main-image.jpg';
+                img.alt = 'KALCALA特別キャンペーン';
+                img.style.width = '100%';
+                img.style.borderRadius = '8px';
+                img.style.cursor = 'pointer';
+                img.addEventListener('click', () => this.redirectToPurchase());
+                imageContent.appendChild(img);
+                imageDiv.appendChild(imageContent);
+                this.messagesContainer.appendChild(imageDiv);
+                this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
+                
+                setTimeout(() => {
+                    this.addMessage('初回83%OFF、たった500円でお試しできます！💰');
+                    setTimeout(() => {
+                        this.showFinalOptions();
+                    }, 1200);
+                }, 1000);
+            }, 1000);
+        }, 1000);
     }
     
     showFinalOptions() {
         this.showOptions([
-            { id: 'purchase', text: '500円で今すぐ試す！', isCTA: true },
+            { id: 'purchase', text: '今すぐ500円で試す！', isCTA: true },
             { id: 'more_info', text: 'もう少し詳しく' },
             { id: 'other_concerns', text: '他の悩みも' }
         ]);
@@ -162,7 +207,7 @@ class KalcalaChatbot {
         
         setTimeout(() => {
             this.showOptions([
-                { id: 'purchase', text: '今すぐお得に始める！', isCTA: true }
+                { id: 'purchase', text: '今すぐ500円で試す！', isCTA: true }
             ]);
         }, 1500);
     }
@@ -175,6 +220,18 @@ class KalcalaChatbot {
         ]);
     }
     
+    handlePurchaseAction() {
+        setTimeout(() => {
+            this.addMessage('素晴らしい判断ですね！🎉');
+            setTimeout(() => {
+                this.addMessage('お得な定期コースページにご案内いたします...');
+                setTimeout(() => {
+                    this.redirectToPurchase();
+                }, 1000);
+            }, 800);
+        }, 300);
+    }
+    
     redirectToPurchase() {
         window.open('https://shop.sain-clarte.com/kalcala/15_nensyo2_mu_ka.lp_ishi/sp.html', '_blank');
     }
@@ -182,33 +239,34 @@ class KalcalaChatbot {
     handleSecondaryChoice(choiceId) {
         switch (choiceId) {
             case 'more_info':
-                this.addMessage('もう少し詳しく', false);
                 setTimeout(() => {
-                    this.addMessage('92.9%の医師が推奨し、機能性表示食品として届け出済みです。30日間の全額返金保証もついているので安心ですね！');
+                    this.addMessage('KALCALAの詳細をご説明しますね！📋');
                     setTimeout(() => {
-                        this.showFinalOptions();
-                    }, 2000);
-                }, 500);
+                        this.addMessage('✅ 92.9%の医師が推奨\n✅ 機能性表示食品として届け出済み\n✅ 30日間全額返金保証付き');
+                        setTimeout(() => {
+                            this.addMessage('安心してお試しいただけます！');
+                            setTimeout(() => {
+                                this.showFinalOptions();
+                            }, 1000);
+                        }, 1500);
+                    }, 1000);
+                }, 300);
                 break;
                 
             case 'other_concerns':
-                this.addMessage('他の悩みも', false);
                 setTimeout(() => {
-                    this.addMessage('他にもお悩みがあるのですね。どちらが気になりますか？');
+                    this.addMessage('他にもお悩みがあるのですね😊');
                     setTimeout(() => {
-                        this.resetToInitialOptions();
+                        this.addMessage('KALCALAは複数のお悩みに同時にアプローチできます！どちらが一番気になりますか？');
+                        setTimeout(() => {
+                            this.resetToInitialOptions();
+                        }, 1000);
                     }, 1000);
-                }, 500);
+                }, 300);
                 break;
                 
             case 'purchase':
-                this.addMessage('500円で今すぐ試す！', false);
-                setTimeout(() => {
-                    this.addMessage('素晴らしい判断ですね！今すぐお得な定期コースにご案内いたします。');
-                    setTimeout(() => {
-                        this.redirectToPurchase();
-                    }, 1000);
-                }, 500);
+                this.handlePurchaseAction();
                 break;
         }
     }
@@ -467,19 +525,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // インタラクティブ機能初期化
     new InteractiveFeatures();
     
-    document.addEventListener('click', function(e) {
-        if (e.target.classList.contains('option-button')) {
-            const optionId = e.target.textContent;
-            
-            if (optionId === 'もっと詳しく知りたい') {
-                chatbot.handleSecondaryChoice('more_info');
-            } else if (optionId === '他の悩みも相談したい') {
-                chatbot.handleSecondaryChoice('other_concerns');
-            } else if (optionId === '今すぐお得に始める！') {
-                chatbot.handleSecondaryChoice('purchase');
-            }
-        }
-    });
+    // グローバルイベントリスナーは削除（各ボタンに直接イベントを設定）
     
     // 相談ボタンでチャットボットを開く
     document.getElementById('consultation-trigger').addEventListener('click', function(e) {
