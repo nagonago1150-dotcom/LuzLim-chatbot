@@ -1713,31 +1713,37 @@ body {
     }
     
     .tab-content {
-        min-height: 320px;
+        min-height: 380px;
     }
     
     .feature-detail {
         grid-template-columns: 1fr;
-        gap: 2rem;
-        padding: 2rem;
-        text-align: center;
+        gap: 1.5rem;
+        padding: 1.5rem;
+        text-align: left;
     }
     
     .feature-visual {
         order: 1;
         width: 100px;
         height: 100px;
-        margin: 0 auto;
+        margin: 0 auto 1rem auto;
         overflow: hidden;
     }
     
     .feature-info {
         order: 2;
+        text-align: left;
     }
     
     .feature-info h4 {
-        font-size: 1.6rem;
-        margin-bottom: 1.5rem;
+        font-size: 1.3rem;
+        margin-bottom: 1.2rem;
+        text-align: center;
+        line-height: 1.4;
+        word-wrap: break-word;
+        white-space: normal;
+        padding: 0 0.5rem;
     }
     
     .ingredient-circle {
@@ -1801,7 +1807,7 @@ body {
     }
     
     .tab-content {
-        min-height: 300px;
+        min-height: 360px;
     }
     
     .doctor-recommendation-image {
@@ -1810,6 +1816,33 @@ body {
     
     .doctor-recommend-img {
         max-width: 230px;
+    }
+    
+    .feature-detail {
+        padding: 1rem;
+        gap: 1rem;
+    }
+    
+    .benefit-item {
+        padding: 0.7rem 0.5rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .benefit-item span:last-child {
+        font-size: 0.9rem;
+    }
+    
+    .feature-info h4 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        padding: 0 0.2rem;
+    }
+    
+    .benefit-note {
+        font-size: 0.8rem;
+        margin-top: 0.6rem;
+        padding-top: 0.6rem;
     }
     
     .doctor-stat-visual .counter-number {
@@ -1990,12 +2023,30 @@ body {
     }
     
     .benefit-item {
-        padding: 0.6rem;
-        margin-bottom: 0.8rem;
+        padding: 0.8rem 0.6rem;
+        margin-bottom: 1rem;
+        align-items: flex-start;
+        line-height: 1.4;
     }
     
     .benefit-item span:last-child {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        word-wrap: break-word;
+        white-space: normal;
+    }
+    
+    .benefit-icon {
+        margin-top: 2px;
+        margin-right: 0.8rem;
+        flex-shrink: 0;
+    }
+    
+    .benefit-note {
+        font-size: 0.85rem;
+        margin-top: 0.8rem;
+        padding-top: 0.8rem;
+        text-align: center;
     }
     
     .concern-illustration,
