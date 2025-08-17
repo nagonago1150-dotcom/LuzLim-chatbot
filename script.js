@@ -487,4 +487,11 @@ document.addEventListener('DOMContentLoaded', function() {
         chatbot.openChat();
         chatbot.showInitialMessage();
     });
+    
+    // ヒーローセクションの相談ボタンでチャットボットを開く
+    document.getElementById('hero-consultation-trigger').addEventListener('click', function(e) {
+        e.preventDefault();
+        chatbot.openChat();
+        chatbot.showInitialMessage();
+    });
 });

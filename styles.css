@@ -96,39 +96,13 @@ body {
     z-index: 4;
     text-align: center;
     color: #1a1a1a;
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
-}
-
-.hero-main-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-    min-height: 60vh;
-}
-
-.hero-image-section {
     display: flex;
-    justify-content: center;
     align-items: center;
-}
-
-.hero-main-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
-}
-
-.hero-main-image:hover {
-    transform: scale(1.02);
-}
-
-.hero-text-section {
-    text-align: left;
+    justify-content: center;
+    min-height: 80vh;
 }
 
 .brand-section {
@@ -203,6 +177,32 @@ body {
 .feature-badge:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(218, 165, 32, 0.4);
+}
+
+.hero-cta-section {
+    margin-top: 2rem;
+    animation: fadeInUp 1.5s ease-out 0.9s both;
+}
+
+.hero-consultation-btn {
+    background: linear-gradient(145deg, #DAA520 0%, #FFD700 100%);
+    color: #000000;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(218, 165, 32, 0.3);
+    font-family: inherit;
+    letter-spacing: 0.5px;
+}
+
+.hero-consultation-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(218, 165, 32, 0.5);
+    background: linear-gradient(145deg, #FFD700 0%, #DAA520 100%);
 }
 
 .product-details {
@@ -1460,19 +1460,13 @@ body {
         min-height: 500px;
     }
     
-    .hero-main-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        text-align: center;
+    .hero-content {
+        min-height: 70vh;
+        padding: 0 15px;
     }
     
-    .hero-image-section {
-        order: 1;
-    }
-    
-    .hero-text-section {
-        order: 2;
-        text-align: center;
+    .brand-section {
+        margin-bottom: 2rem;
     }
     
     .botanical-frame {
@@ -1500,6 +1494,13 @@ body {
     .detail-item {
         padding: 0.2rem 0.6rem;
         font-size: 0.8rem;
+    }
+    
+    .hero-consultation-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        width: 100%;
+        max-width: 250px;
     }
     
     .ingredient-highlights {
