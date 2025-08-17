@@ -462,6 +462,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    flex-shrink: 0;
 }
 
 .ingredient-circle {
@@ -469,8 +473,8 @@ body {
     z-index: 2;
     background: linear-gradient(145deg, #2a2a2a 0%, #1a1a1a 100%);
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -479,8 +483,8 @@ body {
 }
 
 .ingredient-image {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     object-fit: cover;
     border-radius: 50%;
     border: 2px solid #DAA520;
@@ -497,6 +501,11 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
+}
+
+.progress-ring svg {
+    width: 100px;
+    height: 100px;
 }
 
 .progress-circle {
@@ -1571,6 +1580,9 @@ body {
     
     .feature-visual {
         order: 1;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
     }
     
     .feature-info {
@@ -1582,19 +1594,24 @@ body {
         margin-bottom: 1.5rem;
     }
     
-    .ingredient-circle {
-        width: 80px;
-        height: 80px;
+    .feature-visual {
+        width: 100px;
+        height: 100px;
     }
     
-    .ingredient-circle svg {
-        width: 60px;
-        height: 60px;
+    .ingredient-circle {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .ingredient-image {
+        width: 50px;
+        height: 50px;
     }
     
     .progress-ring svg {
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
     }
     
     .doctor-stat-visual .counter-number {
