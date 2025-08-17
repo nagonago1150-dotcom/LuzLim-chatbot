@@ -225,15 +225,68 @@ class KalcalaChatbot {
             this.addMessage('素晴らしい判断ですね！🎉');
             setTimeout(() => {
                 this.addMessage('お得な定期コースページにご案内いたします...');
+                
+                // 購入ページへのリンクボタンも表示
+                const linkDiv = document.createElement('div');
+                linkDiv.className = 'message bot';
+                const linkContent = document.createElement('div');
+                linkContent.className = 'message-content';
+                const linkButton = document.createElement('a');
+                linkButton.href = 'https://shop.sain-clarte.com/kalcala/15_nensyo2_mu_ka.lp_ishi/sp.html';
+                linkButton.target = '_blank';
+                linkButton.rel = 'noopener noreferrer';
+                linkButton.style.cssText = `
+                    display: inline-block;
+                    background: linear-gradient(145deg, #DAA520 0%, #FFD700 50%, #DAA520 100%);
+                    color: #000000;
+                    padding: 12px 24px;
+                    border-radius: 25px;
+                    text-decoration: none;
+                    font-weight: bold;
+                    font-size: 16px;
+                    margin: 10px 0;
+                    transition: transform 0.2s ease;
+                `;
+                linkButton.textContent = '🛒 今すぐ購入ページへ';
+                linkButton.addEventListener('mouseenter', () => {
+                    linkButton.style.transform = 'translateY(-2px)';
+                });
+                linkButton.addEventListener('mouseleave', () => {
+                    linkButton.style.transform = 'translateY(0)';
+                });
+                
+                linkContent.appendChild(linkButton);
+                linkDiv.appendChild(linkContent);
+                this.messagesContainer.appendChild(linkDiv);
+                
+                setTimeout(() => {
+                    this.messagesContainer.scrollTo({
+                        top: this.messagesContainer.scrollHeight,
+                        behavior: 'smooth'
+                    });
+                }, 100);
+                
                 setTimeout(() => {
                     this.redirectToPurchase();
-                }, 1000);
+                }, 1500);
             }, 800);
         }, 300);
     }
     
     redirectToPurchase() {
-        window.open('https://shop.sain-clarte.com/kalcala/15_nensyo2_mu_ka.lp_ishi/sp.html', '_blank');
+        const lpUrl = 'https://shop.sain-clarte.com/kalcala/15_nensyo2_mu_ka.lp_ishi/sp.html';
+        
+        // ポップアップブロッカー対策として複数の方法を試行
+        try {
+            const newWindow = window.open(lpUrl, '_blank', 'noopener,noreferrer');
+            if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
+                // ポップアップがブロックされた場合、同じタブで開く
+                window.location.href = lpUrl;
+            }
+        } catch (e) {
+            // エラーの場合は同じタブで開く
+            window.location.href = lpUrl;
+        }
     }
     
     handleSecondaryChoice(choiceId) {
