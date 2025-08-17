@@ -71,7 +71,7 @@ class KalcalaChatbot {
             return;
         }
         
-        this.addMessage('こんにちは！KALCALAについて知りたいことはありませんか？');
+        this.addMessage('こんにちは！どのようなお悩みですか？');
         
         setTimeout(() => {
             this.showOptions([
@@ -97,21 +97,21 @@ class KalcalaChatbot {
         
         switch (choiceId) {
             case 'fat':
-                this.addMessage('お腹の脂肪にお悩みなんですね。KALCALAには、BMIが高めの方のお腹の脂肪を減らすのを助けるブラックジンジャー由来ポリメトキシフラボンが含まれていますよ！※BMI高めの方');
+                this.addMessage('お腹の脂肪にお悩みなんですね。KALCALAなら脂肪燃焼をサポートできます！');
                 break;
                 
             case 'swelling':
-                this.addMessage('脚のむくみ、気になりますよね。KALCALAは、夕方の脚のむくみを軽減するヒハツ由来ピペリンを配合しています。※病的ではない一過性のむくみ');
+                this.addMessage('むくみにお悩みなんですね。KALCALAなら6時間後に44%軽減できます！');
                 break;
                 
             case 'cold':
-                this.addMessage('冷えにお悩みですか？KALCALAに含まれるヒハツ由来ピペリンが、冷えの軽減をサポートします！※末梢血流量を増加させ、冷えの軽減に役立つ機能が報告されています');
+                this.addMessage('冷えにお悩みなんですね。KALCALAなら血流改善で冷えを軽減できます！');
                 break;
         }
         
         setTimeout(() => {
-            this.showSecondaryOptions();
-        }, 2000);
+            this.showSpecialOffer();
+        }, 1500);
     }
     
     showSecondaryOptions() {
@@ -121,30 +121,40 @@ class KalcalaChatbot {
         ]);
     }
     
-    showDetailedInfo() {
-        this.addMessage('さらに、現役医師も注目しているんです！92.9%の医師が『継続を勧めたい』と回答した医師推奨製品です。', true, true);
+    showSpecialOffer() {
+        this.addMessage('今なら特別キャンペーン中です！');
         
         setTimeout(() => {
-            const noteDiv = document.createElement('div');
-            noteDiv.className = 'small-text';
-            noteDiv.textContent = 'Dr\'s Review事務局調べ';
-            this.messagesContainer.lastChild.querySelector('.message-content').appendChild(noteDiv);
-        }, 500);
+            // 画像を表示
+            const imageDiv = document.createElement('div');
+            imageDiv.className = 'message bot';
+            const imageContent = document.createElement('div');
+            imageContent.className = 'message-content';
+            const img = document.createElement('img');
+            img.src = 'hero-main-image.jpg';
+            img.alt = 'KALCALA特別キャンペーン';
+            img.style.width = '100%';
+            img.style.borderRadius = '8px';
+            imageContent.appendChild(img);
+            imageDiv.appendChild(imageContent);
+            this.messagesContainer.appendChild(imageDiv);
+            this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
+        }, 1000);
         
         setTimeout(() => {
-            this.addMessage('Amazonと楽天でランキング1位を獲得しました！', true, true);
-            
+            this.addMessage('初回83%OFF、たった500円でお試しできます！');
             setTimeout(() => {
-                const noteDiv = document.createElement('div');
-                noteDiv.className = 'small-text';
-                noteDiv.textContent = '※各種レギュレーションに基づく表記';
-                this.messagesContainer.lastChild.querySelector('.message-content').appendChild(noteDiv);
-            }, 500);
-        }, 2000);
-        
-        setTimeout(() => {
-            this.showPriceOffer();
-        }, 4000);
+                this.showFinalOptions();
+            }, 1500);
+        }, 2500);
+    }
+    
+    showFinalOptions() {
+        this.showOptions([
+            { id: 'purchase', text: '500円で今すぐ試す！', isCTA: true },
+            { id: 'more_info', text: 'もう少し詳しく' },
+            { id: 'other_concerns', text: '他の悩みも' }
+        ]);
     }
     
     showPriceOffer() {
@@ -172,14 +182,17 @@ class KalcalaChatbot {
     handleSecondaryChoice(choiceId) {
         switch (choiceId) {
             case 'more_info':
-                this.addMessage('もっと詳しく知りたい', false);
+                this.addMessage('もう少し詳しく', false);
                 setTimeout(() => {
-                    this.showDetailedInfo();
+                    this.addMessage('92.9%の医師が推奨し、機能性表示食品として届け出済みです。30日間の全額返金保証もついているので安心ですね！');
+                    setTimeout(() => {
+                        this.showFinalOptions();
+                    }, 2000);
                 }, 500);
                 break;
                 
             case 'other_concerns':
-                this.addMessage('他の悩みも相談したい', false);
+                this.addMessage('他の悩みも', false);
                 setTimeout(() => {
                     this.addMessage('他にもお悩みがあるのですね。どちらが気になりますか？');
                     setTimeout(() => {
@@ -189,9 +202,9 @@ class KalcalaChatbot {
                 break;
                 
             case 'purchase':
-                this.addMessage('今すぐお得に始める！', false);
+                this.addMessage('500円で今すぐ試す！', false);
                 setTimeout(() => {
-                    this.addMessage('ありがとうございます！お得な定期コースをご案内いたします。');
+                    this.addMessage('素晴らしい判断ですね！今すぐお得な定期コースにご案内いたします。');
                     setTimeout(() => {
                         this.redirectToPurchase();
                     }, 1000);
