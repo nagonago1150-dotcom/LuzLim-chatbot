@@ -167,16 +167,16 @@ body {
 }
 
 .hero-header .subtitle {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     color: #DAA520;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 1px;
     margin-bottom: 2.5rem;
     animation: fadeInUp 1.5s ease-out 0.3s both;
     text-shadow: 
         1px 1px 3px rgba(0, 0, 0, 0.7),
         0 0 20px rgba(218, 165, 32, 0.4);
-    line-height: 1.6;
+    line-height: 1.5;
     padding: 0 1rem;
 }
 
@@ -215,6 +215,26 @@ body {
         0 4px 12px rgba(0, 0, 0, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.4);
     background: linear-gradient(145deg, #FFD700 0%, #DAA520 50%, #FFD700 100%);
+}
+
+.hero-image-section {
+    margin: 1.5rem 0;
+    text-align: center;
+    animation: fadeInUp 1.2s ease-out 0.6s both;
+}
+
+.hero-promo-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-promo-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
 }
 
 .hero-cta-section {
@@ -1580,10 +1600,12 @@ body {
     }
     
     .hero-header .subtitle {
-        font-size: 1.1rem;
+        font-size: 1.4rem;
         letter-spacing: 0.8px;
         margin-bottom: 2rem;
         padding: 0 0.5rem;
+        font-weight: 700;
+        line-height: 1.4;
     }
     
     .product-features {
@@ -1618,6 +1640,16 @@ body {
         border-radius: 40px;
         letter-spacing: 0.8px;
         margin-top: 0.5rem;
+    }
+    
+    .hero-image-section {
+        margin: 1rem 0;
+    }
+    
+    .hero-promo-image {
+        max-width: 320px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
     }
     
     .hero-cta-section {
