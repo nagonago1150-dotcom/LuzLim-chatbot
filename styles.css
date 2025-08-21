@@ -2930,25 +2930,6 @@ body {
         width: 100%;
     }
     
-    #doctor .feature-visual {
-        width: 100%;
-        max-width: 350px;
-        display: flex;
-        justify-content: center;
-    }
-    
-    #doctor .doctor-recommendation-image {
-        width: 100%;
-        max-width: 100%;
-    }
-    
-    #doctor .doctor-recommend-img {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-        max-width: 100%;
-    }
-    
     #doctor .feature-info {
         width: 100%;
         max-width: 100%;
