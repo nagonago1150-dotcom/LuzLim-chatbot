@@ -1116,6 +1116,10 @@ body {
     font-style: italic;
     margin-top: 1.5rem;
     padding: 1rem;
+    line-height: 1.6;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
     background: linear-gradient(145deg, rgba(26, 26, 26, 0.5) 0%, rgba(42, 42, 42, 0.3) 100%);
     border-radius: 10px;
     border: 1px solid rgba(218, 165, 32, 0.15);
@@ -2902,6 +2906,43 @@ body {
         margin-bottom: 0;
         text-align: center;
     }
+}
+
+/* PC版専用：医師推奨の長いテキスト表示改善 */
+@media (min-width: 769px) {
+    .feature-info .benefit-note {
+        font-size: 0.8rem;
+        line-height: 1.5;
+        max-width: none;
+        white-space: normal;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        padding: 0.8rem;
+        text-align: left;
+    }
+    
+    #doctor .feature-info {
+        max-width: 500px;
+        width: 100%;
+    }
+    
+    #doctor .feature-detail {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+    
+    #doctor .feature-visual {
+        flex-shrink: 0;
+        min-width: 200px;
+    }
+    
+    #doctor .feature-info {
+        flex: 1;
+        min-width: 0;
+    }
+}
     
     .concern-illustration,
     .solution-illustration {
