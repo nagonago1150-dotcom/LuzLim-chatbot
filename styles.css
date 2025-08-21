@@ -2911,8 +2911,8 @@ body {
 /* PC版専用：医師推奨の長いテキスト表示改善 */
 @media (min-width: 769px) {
     .feature-info .benefit-note {
-        font-size: 0.8rem;
-        line-height: 1.5;
+        font-size: 0.75rem;
+        line-height: 1.4;
         max-width: none;
         white-space: normal;
         word-wrap: break-word;
@@ -2921,26 +2921,48 @@ body {
         text-align: left;
     }
     
-    #doctor .feature-info {
-        max-width: 500px;
+    #doctor .feature-detail {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        max-width: 100%;
         width: 100%;
     }
     
-    #doctor .feature-detail {
+    #doctor .feature-visual {
+        width: 100%;
+        max-width: 350px;
         display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 2rem;
+        justify-content: center;
     }
     
-    #doctor .feature-visual {
-        flex-shrink: 0;
-        min-width: 200px;
+    #doctor .doctor-recommendation-image {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    #doctor .doctor-recommend-img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        max-width: 100%;
     }
     
     #doctor .feature-info {
-        flex: 1;
-        min-width: 0;
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    #doctor .feature-info .benefit-note {
+        max-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: left;
+        font-size: 0.72rem;
+        padding: 1rem;
+        margin: 1rem 0;
     }
 }
     
