@@ -1630,7 +1630,7 @@ body {
 }
 
 #chatbot-options {
-    padding: 20px;
+    padding: 25px;
     background: transparent;
     border-top: 1px solid rgba(218, 165, 32, 0.3);
     position: relative;
@@ -1640,7 +1640,7 @@ body {
 .option-button {
     display: block;
     width: 100%;
-    padding: 15px 20px;
+    padding: 16px 22px;
     margin-bottom: 12px;
     background: linear-gradient(145deg, #ffffff 0%, #f5f5f5 100%);
     border: 2px solid #DAA520;
@@ -1648,7 +1648,7 @@ body {
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: 15px;
+    font-size: 16px;
     text-align: center;
     font-weight: 500;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -1669,8 +1669,8 @@ body {
     border-color: #DAA520 !important;
     color: #f5f5f5 !important;
     font-weight: 600;
-    font-size: 17px;
-    padding: 18px 25px;
+    font-size: 18px;
+    padding: 20px 28px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -2851,7 +2851,13 @@ body {
     }
     
     #chatbot-options {
-        padding: 15px;
+        padding: 20px 18px;
+    }
+    
+    .option-button {
+        padding: 16px 18px;
+        font-size: 14px;
+        margin-bottom: 10px;
     }
 }
 
@@ -3029,7 +3035,13 @@ body {
     }
     
     #chatbot-options {
-        padding: 12px;
+        padding: 18px 15px;
+    }
+    
+    .option-button {
+        padding: 14px 16px;
+        font-size: 13px;
+        margin-bottom: 8px;
     }
 }
 
