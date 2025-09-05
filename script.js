@@ -1,4 +1,4 @@
-class KalcalaChatbot {
+class LuzlimChatbot {
     constructor() {
         this.chatContainer = document.getElementById('chatbot-container');
         this.chatTrigger = document.getElementById('chatbot-trigger');
@@ -88,15 +88,15 @@ class KalcalaChatbot {
             return;
         }
         
-        this.addMessage('こんにちは！KALCALAサポートです😊');
+        this.addMessage('こんにちは！LuzLimサポートです😊');
         
         setTimeout(() => {
             this.addMessage('どのようなお悩みでお困りですか？');
             setTimeout(() => {
                 this.showOptions([
-                    { id: 'fat', text: 'お腹の脂肪が気になる' },
-                    { id: 'swelling', text: 'むくみが気になる' },
-                    { id: 'cold', text: '冷えが気になる' }
+                    { id: 'odor', text: 'ニオイ・ムレが気になる' },
+                    { id: 'discomfort', text: '生理中の不快感' },
+                    { id: 'dryness', text: 'かゆみ・乾燥' }
                 ]);
             }, 800);
         }, 1000);
@@ -122,30 +122,30 @@ class KalcalaChatbot {
         this.selectedConcern = choiceId;
         
         switch (choiceId) {
-            case 'fat':
-                this.addMessage('お腹の脂肪にお悩みなんですね。');
+            case 'odor':
+                this.addMessage('ニオイ・ムレにお悩みなんですね。');
                 setTimeout(() => {
-                    this.addMessage('KALCALAのブラックジンジャー由来成分が脂肪燃焼をサポートしますよ！✨');
+                    this.addMessage('LuzLimのW処方が原因菌をブロックして、夕まで気にならない清潔な状態を保ちますよ！✨');
                     setTimeout(() => {
                         this.showSpecialOffer();
                     }, 1200);
                 }, 1000);
                 return;
                 
-            case 'swelling':
-                this.addMessage('むくみにお悩みなんですね。');
+            case 'discomfort':
+                this.addMessage('生理中の不快感にお悩みなんですね。');
                 setTimeout(() => {
-                    this.addMessage('KALCALAなら6時間後にむくみを44%軽減できます！👍');
+                    this.addMessage('LuzLimなら濃密な泡でやさしく洗えるので、敏感な時期も快適に過ごせます！👍');
                     setTimeout(() => {
                         this.showSpecialOffer();
                     }, 1200);
                 }, 1000);
                 return;
                 
-            case 'cold':
-                this.addMessage('冷えにお悩みなんですね。');
+            case 'dryness':
+                this.addMessage('かゆみ・乾燥にお悩みなんですね。');
                 setTimeout(() => {
-                    this.addMessage('KALCALAのヒハツ由来成分が血流改善で冷えを軽減できます！🔥');
+                    this.addMessage('LuzLimはうるおいを守りながら洗えるので、乾燥しがちなデリケートゾーンにぴったりです！🌸');
                     setTimeout(() => {
                         this.showSpecialOffer();
                     }, 1200);
@@ -174,7 +174,7 @@ class KalcalaChatbot {
                 imageContent.className = 'message-content';
                 const img = document.createElement('img');
                 img.src = 'hero-main-image.jpg';
-                img.alt = 'KALCALA特別キャンペーン';
+                img.alt = 'LuzLim特別キャンペーン';
                 img.style.width = '100%';
                 img.style.borderRadius = '8px';
                 img.style.cursor = 'pointer';
@@ -185,7 +185,7 @@ class KalcalaChatbot {
                 this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
                 
                 setTimeout(() => {
-                    this.addMessage('初回83%OFF、たった500円でお試しできます！💰');
+                    this.addMessage('初回特別価格、1,980円でお試しできます！💰');
                     setTimeout(() => {
                         this.showFinalOptions();
                     }, 1200);
@@ -196,27 +196,27 @@ class KalcalaChatbot {
     
     showFinalOptions() {
         this.showOptions([
-            { id: 'purchase', text: '今すぐ500円で試す！', isCTA: true },
+            { id: 'purchase', text: '今すぐ1,980円で試す！', isCTA: true },
             { id: 'more_info', text: 'もう少し詳しく' },
             { id: 'other_concerns', text: '他の悩みも' }
         ]);
     }
     
     showPriceOffer() {
-        this.addMessage('今なら、初回定期価格500円（税込・送料無料）でお試しいただけます！2回目以降も約23%OFFです。');
+        this.addMessage('今なら、初回特別価格1,980円（税込・送料無料）でお試しいただけます！定期回数のお約束なしです。');
         
         setTimeout(() => {
             this.showOptions([
-                { id: 'purchase', text: '今すぐ500円で試す！', isCTA: true }
+                { id: 'purchase', text: '今すぐ1,980円で試す！', isCTA: true }
             ]);
         }, 1500);
     }
     
     resetToInitialOptions() {
         this.showOptions([
-            { id: 'fat', text: 'お腹の脂肪が気になる' },
-            { id: 'swelling', text: 'むくみが気になる' },
-            { id: 'cold', text: '冷えが気になる' }
+            { id: 'odor', text: 'ニオイ・ムレが気になる' },
+            { id: 'discomfort', text: '生理中の不快感' },
+            { id: 'dryness', text: 'かゆみ・乾燥' }
         ]);
     }
     
@@ -232,7 +232,7 @@ class KalcalaChatbot {
                 const linkContent = document.createElement('div');
                 linkContent.className = 'message-content';
                 const linkButton = document.createElement('a');
-                linkButton.href = 'https://shop.sain-clarte.com/kalcala/15_nensyo2_mu_ka.lp_ishi/sp.html';
+                linkButton.href = 'https://shop.salus-inc.com/lp?u=ts_test_250716_LCP_LUZLIM_SD#chatform';
                 linkButton.target = '_blank';
                 linkButton.rel = 'noopener noreferrer';
                 linkButton.style.cssText = `
@@ -274,7 +274,7 @@ class KalcalaChatbot {
     }
     
     redirectToPurchase() {
-        const lpUrl = 'https://shop.sain-clarte.com/kalcala/15_nensyo2_mu_ka.lp_ishi/sp.html';
+        const lpUrl = 'https://shop.salus-inc.com/lp?u=ts_test_250716_LCP_LUZLIM_SD#chatform';
         
         // ポップアップブロッカー対策として複数の方法を試行
         try {
@@ -293,9 +293,9 @@ class KalcalaChatbot {
         switch (choiceId) {
             case 'more_info':
                 setTimeout(() => {
-                    this.addMessage('KALCALAの詳細をご説明しますね！📋');
+                    this.addMessage('LuzLimの詳細をご説明しますね！📋');
                     setTimeout(() => {
-                        this.addMessage('✅ 92.9%の医師が推奨\n✅ 機能性表示食品として届け出済み\n✅ 30日間全額返金保証付き');
+                        this.addMessage('✅ 累計18万人の実績から誕生\n✅ 抗菌・消臭のW処方\n✅ 定期回数のお約束なし');
                         setTimeout(() => {
                             this.addMessage('安心してお試しいただけます！');
                             setTimeout(() => {
@@ -310,7 +310,7 @@ class KalcalaChatbot {
                 setTimeout(() => {
                     this.addMessage('他にもお悩みがあるのですね😊');
                     setTimeout(() => {
-                        this.addMessage('KALCALAは複数のお悩みに同時にアプローチできます！どちらが一番気になりますか？');
+                        this.addMessage('LuzLimは複数のお悩みに同時にアプローチできます！どちらが一番気になりますか？');
                         setTimeout(() => {
                             this.resetToInitialOptions();
                         }, 1000);
@@ -567,7 +567,7 @@ class InteractiveFeatures {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    const chatbot = new KalcalaChatbot();
+    const chatbot = new LuzlimChatbot();
     
     // パーティクルシステム初期化
     new ParticleSystem();
