@@ -114,7 +114,7 @@ body {
     position: relative;
     z-index: 4;
     text-align: center;
-    color: #1a1a1a;
+    color: #5a4037;
     max-width: 900px;
     margin: 0 auto;
     padding: 0 40px;
@@ -1073,7 +1073,10 @@ body {
         0 0 100px rgba(255, 215, 0, 0.2),
         inset 0 2px 4px rgba(255, 255, 255, 0.2),
         inset 0 -2px 4px rgba(255, 215, 0, 0.2);
-    background: linear-gradient(145deg, rgba(60, 60, 60, 0.9) 0%, rgba(40, 40, 40, 1) 50%, rgba(60, 60, 60, 0.9) 100%);
+    background: linear-gradient(145deg, 
+        rgba(255, 248, 240, 0.9) 0%, 
+        rgba(253, 245, 235, 0.95) 50%, 
+        rgba(255, 248, 240, 0.9) 100%);
 }
 
 .benefit-item::before {
@@ -1199,7 +1202,9 @@ body {
     word-wrap: break-word;
     overflow-wrap: break-word;
     white-space: normal;
-    background: linear-gradient(145deg, rgba(26, 26, 26, 0.5) 0%, rgba(42, 42, 42, 0.3) 100%);
+    background: linear-gradient(145deg, 
+        rgba(255, 250, 245, 0.7) 0%, 
+        rgba(253, 247, 240, 0.6) 100%);
     border-radius: 10px;
     border: 1px solid rgba(218, 165, 32, 0.15);
     text-align: center;
@@ -1210,7 +1215,7 @@ body {
 
 .cta-section {
     background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 50%, #f5f5f5 100%);
-    color: #1a1a1a;
+    color: #5a4037;
     padding: 5rem 0;
     text-align: center;
     position: relative;
@@ -1675,7 +1680,7 @@ body {
 
 .message.bot .message-content {
     background: linear-gradient(145deg, #ffffff 0%, #f5f5f5 100%);
-    color: #1a1a1a;
+    color: #5a4037;
     border: 2px solid rgba(218, 165, 32, 0.6);
     box-shadow: 0 2px 8px rgba(139, 82, 52, 0.03);
 }
@@ -1704,7 +1709,7 @@ body {
     margin-bottom: 10px;
     background: linear-gradient(145deg, #ffffff 0%, #f5f5f5 100%);
     border: 2px solid #DAA520;
-    color: #1a1a1a;
+    color: #5a4037;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -2112,7 +2117,9 @@ body {
 
 /* 科学的根拠セクション */
 .scientific-evidence {
-    background: linear-gradient(145deg, rgba(26, 26, 26, 0.8) 0%, rgba(42, 42, 42, 0.8) 100%);
+    background: linear-gradient(145deg, 
+        rgba(255, 248, 240, 0.8) 0%, 
+        rgba(253, 245, 235, 0.8) 100%);
     border-radius: 20px;
     padding: 3rem 2rem;
     border: 1px solid rgba(218, 165, 32, 0.2);
