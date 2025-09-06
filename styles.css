@@ -29,6 +29,175 @@ body {
     /* スムーズスクロール */
     scroll-behavior: smooth;
     overflow-x: hidden;
+    position: relative;
+}
+
+/* Water Effects Container */
+.water-effects-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+/* Water Ripples */
+.water-ripples {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid rgba(173, 216, 230, 0.15);
+    animation: rippleExpand 8s ease-out infinite;
+}
+
+.ripple-1 {
+    width: 200px;
+    height: 200px;
+    top: 20%;
+    left: 15%;
+    animation-delay: 0s;
+}
+
+.ripple-2 {
+    width: 150px;
+    height: 150px;
+    top: 60%;
+    right: 20%;
+    animation-delay: 2s;
+}
+
+.ripple-3 {
+    width: 300px;
+    height: 300px;
+    top: 80%;
+    left: 60%;
+    animation-delay: 4s;
+}
+
+.ripple-4 {
+    width: 120px;
+    height: 120px;
+    top: 40%;
+    left: 70%;
+    animation-delay: 6s;
+}
+
+@keyframes rippleExpand {
+    0% {
+        transform: scale(0.3);
+        opacity: 0.8;
+        border-width: 3px;
+    }
+    50% {
+        transform: scale(0.8);
+        opacity: 0.4;
+        border-width: 2px;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+        border-width: 1px;
+    }
+}
+
+/* Water Droplets */
+.water-droplets {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.droplet {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle at 30% 30%, 
+        rgba(173, 216, 230, 0.8) 0%, 
+        rgba(135, 206, 235, 0.6) 50%, 
+        rgba(70, 130, 180, 0.3) 100%);
+    border-radius: 50%;
+    animation: dropletFloat 6s ease-in-out infinite;
+    box-shadow: 
+        0 2px 4px rgba(173, 216, 230, 0.3),
+        inset 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.droplet-1 {
+    top: 15%;
+    left: 25%;
+    animation-delay: 0s;
+}
+
+.droplet-2 {
+    top: 35%;
+    right: 30%;
+    animation-delay: 1.2s;
+}
+
+.droplet-3 {
+    top: 55%;
+    left: 10%;
+    animation-delay: 2.4s;
+}
+
+.droplet-4 {
+    top: 75%;
+    right: 15%;
+    animation-delay: 3.6s;
+}
+
+.droplet-5 {
+    top: 25%;
+    left: 80%;
+    animation-delay: 4.8s;
+}
+
+@keyframes dropletFloat {
+    0%, 100% {
+        transform: translateY(0px) scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateY(-15px) scale(1.2);
+        opacity: 0.9;
+    }
+}
+
+/* Moisture Overlay */
+.moisture-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 15% 25%, rgba(173, 216, 230, 0.03) 0%, transparent 30%),
+        radial-gradient(circle at 85% 75%, rgba(135, 206, 235, 0.03) 0%, transparent 35%),
+        radial-gradient(circle at 50% 10%, rgba(176, 224, 230, 0.02) 0%, transparent 40%),
+        radial-gradient(circle at 30% 90%, rgba(173, 216, 230, 0.03) 0%, transparent 25%);
+    animation: moistureShimmer 12s ease-in-out infinite;
+}
+
+@keyframes moistureShimmer {
+    0%, 100% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.02);
+    }
+}
+
+main {
+    position: relative;
+    z-index: 1;
 }
 
 .container {
@@ -57,6 +226,7 @@ body {
             rgba(247, 238, 225, 0.85) 100%);
     padding: clamp(20px, 4vh, 40px) 0;
     box-sizing: border-box;
+    z-index: 1;
 }
 
 .botanical-background {
@@ -1309,6 +1479,7 @@ body {
     padding: 5rem 0;
     text-align: center;
     overflow: hidden;
+    z-index: 1;
 }
 
 .cta-section::before {
