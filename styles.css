@@ -1710,72 +1710,16 @@ main {
     font-family: 'Inter', sans-serif;
     font-size: 5.5rem;
     font-weight: 900;
-    color: #DAA520;
+    color: #8B4513;
     text-shadow: 
-        3px 3px 10px rgba(139, 82, 52, 0.2),
-        0 0 30px rgba(218, 165, 32, 0.6),
-        0 0 60px rgba(255, 215, 0, 0.3);
+        2px 2px 4px rgba(139, 69, 19, 0.3),
+        0 0 8px rgba(139, 69, 19, 0.2);
     letter-spacing: 4px;
     display: inline-block;
     font-feature-settings: 'tnum' 1;
-    background: linear-gradient(45deg, #DAA520, #FFD700, #FFA500, #FFD700, #DAA520);
-    background-size: 400% 400%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: priceGlow 3s ease-in-out infinite;
     position: relative;
     transform: scale(1);
     transition: transform 0.3s ease;
-}
-
-.price-main::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 120%;
-    height: 120%;
-    background: radial-gradient(circle, rgba(255, 215, 0, 0.2) 0%, transparent 70%);
-    animation: priceHalo 3s ease-in-out infinite;
-    z-index: -1;
-}
-
-@keyframes priceGlow {
-    0%, 100% { 
-        background-position: 0% 50%;
-        filter: drop-shadow(0 0 15px rgba(218, 165, 32, 0.6));
-        transform: scale(1);
-    }
-    25% {
-        background-position: 25% 75%;
-        filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.8));
-        transform: scale(1.03);
-    }
-    50% { 
-        background-position: 100% 50%;
-        filter: drop-shadow(0 0 30px rgba(255, 215, 0, 1));
-        transform: scale(1.05);
-    }
-    75% {
-        background-position: 75% 25%;
-        filter: drop-shadow(0 0 25px rgba(255, 165, 0, 0.8));
-        transform: scale(1.02);
-    }
-}
-
-@keyframes priceHalo {
-    0%, 100% { 
-        opacity: 0.3;
-        transform: translate(-50%, -50%) scale(1);
-    }
-    50% { 
-        opacity: 0.6;
-        transform: translate(-50%, -50%) scale(1.1);
-    }
-}
-    background-clip: text;
 }
 
 .price-sub {
