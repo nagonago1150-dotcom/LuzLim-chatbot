@@ -9,8 +9,8 @@
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.7;
-    color: #2c2c2c;
-    background: linear-gradient(135deg, #faf9f7 0%, #f5f2ed 50%, #f0ebe3 100%);
+    color: #5a4037;
+    background: linear-gradient(135deg, #ffffff 0%, #fefcfa 25%, #fdf9f5 50%, #fcf7f0 75%, #faf5eb 100%);
     background-attachment: fixed;
     /* パフォーマンス最適化 */
     -webkit-font-smoothing: antialiased;
@@ -35,7 +35,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #2c1810 0%, #4a2c1a 25%, #6d3f26 50%, #8b5234 75%, #a66847 100%);
+    background: linear-gradient(135deg, 
+        rgba(255, 248, 240, 0.9) 0%, 
+        rgba(251, 243, 232, 0.85) 25%, 
+        rgba(248, 238, 225, 0.8) 50%, 
+        rgba(245, 233, 218, 0.85) 75%, 
+        rgba(242, 228, 211, 0.9) 100%);
     padding: clamp(20px, 4vh, 40px) 0;
     box-sizing: border-box;
 }
@@ -118,17 +123,18 @@ body {
 
 .botanical-frame {
     background: linear-gradient(145deg, 
-        rgba(255, 248, 240, 0.95) 0%, 
-        rgba(250, 243, 232, 0.9) 50%,
-        rgba(245, 238, 225, 0.95) 100%);
-    border: 2px solid rgba(139, 82, 52, 0.2);
+        rgba(255, 255, 255, 0.85) 0%, 
+        rgba(255, 252, 247, 0.8) 50%,
+        rgba(253, 249, 242, 0.85) 100%);
+    border: 2px solid rgba(139, 82, 52, 0.15);
     border-radius: 30px;
     padding: 2.5rem 2rem;
     box-shadow: 
-        0 25px 80px rgba(139, 82, 52, 0.15),
-        0 0 0 1px rgba(139, 82, 52, 0.08),
-        inset 0 1px 0 rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(20px);
+        0 25px 60px rgba(139, 82, 52, 0.08),
+        0 8px 20px rgba(139, 82, 52, 0.05),
+        0 0 0 1px rgba(255, 255, 255, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(25px);
     position: relative;
     overflow: hidden;
     transform: translateZ(0);
@@ -154,14 +160,14 @@ body {
     font-family: 'Cormorant Garamond', serif;
     font-size: 3.5rem;
     margin-bottom: 1rem;
-    font-weight: 600;
-    color: #2c1810;
+    font-weight: 700;
+    color: #4a2c1a;
     letter-spacing: 2px;
     animation: fadeInUp 1.5s ease-out;
     text-transform: uppercase;
     text-shadow: 
-        0 2px 4px rgba(139, 82, 52, 0.1),
-        0 0 20px rgba(139, 82, 52, 0.05);
+        0 2px 8px rgba(255, 255, 255, 0.8),
+        0 1px 4px rgba(139, 82, 52, 0.3);
     position: relative;
     line-height: 1.1;
 }
@@ -180,14 +186,14 @@ body {
 
 .hero-header .subtitle {
     font-size: 1.1rem;
-    color: #8b5234;
-    font-weight: 500;
+    color: #6d4c41;
+    font-weight: 600;
     letter-spacing: 1px;
     margin-bottom: 1.5rem;
     animation: fadeInUp 1.5s ease-out 0.3s both;
     text-shadow: 
-        0 1px 2px rgba(139, 82, 52, 0.1),
-        0 0 10px rgba(139, 82, 52, 0.05);
+        0 2px 6px rgba(255, 255, 255, 0.9),
+        0 1px 3px rgba(139, 82, 52, 0.2);
     line-height: 1.4;
     padding: 0 0.5rem;
     font-style: italic;
@@ -203,22 +209,27 @@ body {
 }
 
 .feature-badge {
-    background: linear-gradient(145deg, #8b5234 0%, #a66847 50%, #8b5234 100%);
+    background: linear-gradient(145deg, 
+        rgba(139, 82, 52, 0.9) 0%, 
+        rgba(166, 104, 71, 0.85) 50%, 
+        rgba(139, 82, 52, 0.9) 100%);
     color: #ffffff;
     padding: 1rem 1.8rem;
     border-radius: 30px;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 0.9rem;
     text-align: center;
     box-shadow: 
-        0 8px 25px rgba(139, 82, 52, 0.25),
-        0 3px 10px rgba(44, 24, 16, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(139, 82, 52, 0.3);
+        0 8px 25px rgba(139, 82, 52, 0.15),
+        0 3px 10px rgba(139, 82, 52, 0.08),
+        0 0 0 1px rgba(255, 255, 255, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(139, 82, 52, 0.2);
     transition: all 0.3s ease;
     position: relative;
     letter-spacing: 0.8px;
     transform: translateZ(0);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .feature-badge:hover {
@@ -257,26 +268,31 @@ body {
 }
 
 .hero-consultation-btn {
-    background: linear-gradient(145deg, #8b5234 0%, #a66847 50%, #8b5234 100%);
+    background: linear-gradient(145deg, 
+        rgba(139, 82, 52, 0.95) 0%, 
+        rgba(166, 104, 71, 0.9) 50%, 
+        rgba(139, 82, 52, 0.95) 100%);
     color: #ffffff;
     border: none;
     padding: 1.3rem 2.8rem;
     border-radius: 50px;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 
-        0 10px 30px rgba(139, 82, 52, 0.3),
-        0 5px 15px rgba(44, 24, 16, 0.1),
-        inset 0 2px 0 rgba(255, 255, 255, 0.15),
-        inset 0 -2px 0 rgba(44, 24, 16, 0.1);
+        0 10px 30px rgba(139, 82, 52, 0.2),
+        0 5px 15px rgba(139, 82, 52, 0.1),
+        0 0 0 1px rgba(255, 255, 255, 0.3),
+        inset 0 2px 0 rgba(255, 255, 255, 0.25),
+        inset 0 -2px 0 rgba(139, 82, 52, 0.2);
     font-family: inherit;
     letter-spacing: 1.2px;
     text-transform: uppercase;
     position: relative;
     overflow: hidden;
     transform: translateZ(0);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .hero-consultation-btn::before {
@@ -443,7 +459,10 @@ body {
 }
 
 .hero {
-    background: linear-gradient(180deg, #f5f2ed 0%, #f0ebe3 100%);
+    background: linear-gradient(180deg, 
+        rgba(255, 255, 255, 0.7) 0%, 
+        rgba(253, 249, 242, 0.6) 50%,
+        rgba(250, 245, 235, 0.7) 100%);
     padding: 4rem 0;
     text-align: center;
     position: relative;
@@ -486,11 +505,11 @@ body {
     font-family: 'Cormorant Garamond', serif;
     font-size: 3rem;
     margin-bottom: 1.5rem;
-    color: #2c1810;
-    font-weight: 600;
+    color: #4a2c1a;
+    font-weight: 700;
     position: relative;
     z-index: 2;
-    background: linear-gradient(45deg, #2c1810, #8b5234, #a66847, #8b5234, #2c1810);
+    background: linear-gradient(45deg, #4a2c1a, #8b5234, #a66847, #8b5234, #4a2c1a);
     background-size: 400% 400%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -609,24 +628,27 @@ body {
 }
 
 .tab-button {
-    background: linear-gradient(145deg, #2a2a2a 0%, #1a1a1a 100%);
-    border: 2px solid rgba(218, 165, 32, 0.3);
-    color: #cccccc;
+    background: linear-gradient(145deg, 
+        rgba(255, 255, 255, 0.8) 0%, 
+        rgba(253, 249, 242, 0.7) 100%);
+    border: 2px solid rgba(139, 82, 52, 0.2);
+    color: #6d4c41;
     padding: 1.2rem 2.5rem;
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1rem;
     letter-spacing: 0.5px;
     box-shadow: 
-        0 8px 25px rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    font-family: 'Lato', sans-serif;
-    font-weight: 500;
+        0 8px 25px rgba(139, 82, 52, 0.1),
+        0 2px 8px rgba(139, 82, 52, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(15px);
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -646,12 +668,15 @@ body {
 }
 
 .tab-button.active {
-    background: linear-gradient(145deg, #DAA520 0%, #B8860B 100%);
-    color: #000000;
-    border-color: #FFD700;
-    box-shadow: 0 6px 20px rgba(218, 165, 32, 0.4);
+    background: linear-gradient(145deg, 
+        rgba(139, 82, 52, 0.9) 0%, 
+        rgba(166, 104, 71, 0.85) 100%);
+    color: #ffffff;
+    border-color: rgba(139, 82, 52, 0.4);
+    box-shadow: 0 6px 20px rgba(139, 82, 52, 0.2);
     transform: translateY(-2px);
     animation: activeTabPulse 2s ease-in-out infinite;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes activeTabPulse {
