@@ -54,86 +54,86 @@ body {
 .ripple {
     position: absolute;
     border-radius: 50%;
-    border: 4px solid rgba(100, 180, 220, 0.6);
-    background: radial-gradient(circle, rgba(173, 216, 230, 0.1) 0%, transparent 70%);
-    animation: rippleExpand 8s ease-out infinite;
+    border: 6px solid rgba(255, 255, 255, 0.4);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+    animation: rippleExpand 10s ease-out infinite;
     box-shadow: 
-        0 0 20px rgba(100, 180, 220, 0.3),
-        inset 0 0 20px rgba(173, 216, 230, 0.2);
+        0 0 40px rgba(255, 255, 255, 0.3),
+        inset 0 0 30px rgba(255, 255, 255, 0.2);
 }
 
 .ripple-1 {
-    width: 300px;
-    height: 300px;
-    top: 15%;
-    left: 10%;
+    width: 500px;
+    height: 500px;
+    top: 10%;
+    left: 5%;
     animation-delay: 0s;
 }
 
 .ripple-2 {
-    width: 200px;
-    height: 200px;
-    top: 55%;
-    right: 15%;
+    width: 400px;
+    height: 400px;
+    top: 50%;
+    right: 10%;
     animation-delay: 2s;
 }
 
 .ripple-3 {
-    width: 400px;
-    height: 400px;
-    top: 75%;
-    left: 55%;
+    width: 600px;
+    height: 600px;
+    top: 70%;
+    left: 50%;
     animation-delay: 4s;
 }
 
 .ripple-4 {
-    width: 180px;
-    height: 180px;
-    top: 35%;
-    left: 65%;
+    width: 350px;
+    height: 350px;
+    top: 30%;
+    left: 60%;
     animation-delay: 6s;
 }
 
 .ripple-5 {
-    width: 250px;
-    height: 250px;
-    top: 5%;
-    right: 30%;
+    width: 450px;
+    height: 450px;
+    top: 2%;
+    right: 25%;
     animation-delay: 1s;
 }
 
 .ripple-6 {
-    width: 160px;
-    height: 160px;
-    top: 85%;
-    left: 20%;
+    width: 380px;
+    height: 380px;
+    top: 80%;
+    left: 15%;
     animation-delay: 5s;
 }
 
 @keyframes rippleExpand {
     0% {
-        transform: scale(0.2);
-        opacity: 0.9;
-        border-width: 5px;
+        transform: scale(0.1);
+        opacity: 0.8;
+        border-width: 8px;
         box-shadow: 
-            0 0 30px rgba(100, 180, 220, 0.5),
-            inset 0 0 30px rgba(173, 216, 230, 0.3);
+            0 0 60px rgba(255, 255, 255, 0.4),
+            inset 0 0 40px rgba(255, 255, 255, 0.3);
     }
     50% {
         transform: scale(0.6);
-        opacity: 0.6;
-        border-width: 3px;
+        opacity: 0.5;
+        border-width: 4px;
         box-shadow: 
-            0 0 40px rgba(100, 180, 220, 0.4),
-            inset 0 0 40px rgba(173, 216, 230, 0.2);
+            0 0 80px rgba(255, 255, 255, 0.3),
+            inset 0 0 60px rgba(255, 255, 255, 0.2);
     }
     100% {
-        transform: scale(1.2);
+        transform: scale(1.5);
         opacity: 0;
         border-width: 1px;
         box-shadow: 
-            0 0 50px rgba(100, 180, 220, 0.1),
-            inset 0 0 50px rgba(173, 216, 230, 0.1);
+            0 0 100px rgba(255, 255, 255, 0.1),
+            inset 0 0 80px rgba(255, 255, 255, 0.1);
     }
 }
 
@@ -146,20 +146,20 @@ body {
 
 .droplet {
     position: absolute;
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     background: radial-gradient(circle at 30% 30%, 
-        rgba(100, 180, 220, 0.9) 0%, 
-        rgba(70, 150, 200, 0.8) 30%, 
-        rgba(50, 120, 180, 0.6) 70%, 
-        rgba(30, 90, 160, 0.4) 100%);
+        rgba(255, 255, 255, 0.7) 0%, 
+        rgba(255, 255, 255, 0.5) 30%, 
+        rgba(255, 255, 255, 0.3) 70%, 
+        rgba(255, 255, 255, 0.1) 100%);
     border-radius: 50%;
-    animation: dropletFloat 6s ease-in-out infinite;
+    animation: dropletFloat 8s ease-in-out infinite;
     box-shadow: 
-        0 4px 8px rgba(100, 180, 220, 0.6),
-        0 0 15px rgba(173, 216, 230, 0.4),
-        inset 0 2px 4px rgba(255, 255, 255, 0.9),
-        inset 0 -2px 4px rgba(50, 120, 180, 0.3);
+        0 6px 12px rgba(255, 255, 255, 0.4),
+        0 0 20px rgba(255, 255, 255, 0.3),
+        inset 0 3px 6px rgba(255, 255, 255, 0.8),
+        inset 0 -3px 6px rgba(255, 255, 255, 0.2);
 }
 
 .droplet-1 {
@@ -229,19 +229,19 @@ body {
 @keyframes dropletFloat {
     0%, 100% {
         transform: translateY(0px) scale(1);
-        opacity: 0.8;
+        opacity: 0.7;
         box-shadow: 
-            0 4px 8px rgba(100, 180, 220, 0.6),
-            0 0 15px rgba(173, 216, 230, 0.4),
-            inset 0 2px 4px rgba(255, 255, 255, 0.9);
+            0 6px 12px rgba(255, 255, 255, 0.4),
+            0 0 20px rgba(255, 255, 255, 0.3),
+            inset 0 3px 6px rgba(255, 255, 255, 0.8);
     }
     50% {
-        transform: translateY(-20px) scale(1.3);
-        opacity: 1;
+        transform: translateY(-25px) scale(1.4);
+        opacity: 0.9;
         box-shadow: 
-            0 6px 12px rgba(100, 180, 220, 0.8),
-            0 0 25px rgba(173, 216, 230, 0.6),
-            inset 0 3px 6px rgba(255, 255, 255, 1);
+            0 8px 16px rgba(255, 255, 255, 0.5),
+            0 0 30px rgba(255, 255, 255, 0.4),
+            inset 0 4px 8px rgba(255, 255, 255, 0.9);
     }
 }
 
@@ -251,17 +251,17 @@ body {
     width: 100%;
     height: 100%;
     background: 
-        radial-gradient(circle at 15% 25%, rgba(100, 180, 220, 0.12) 0%, transparent 40%),
-        radial-gradient(circle at 85% 75%, rgba(120, 190, 230, 0.10) 0%, transparent 45%),
-        radial-gradient(circle at 50% 10%, rgba(140, 200, 240, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 30% 90%, rgba(160, 210, 250, 0.12) 0%, transparent 35%),
-        radial-gradient(circle at 70% 40%, rgba(80, 160, 200, 0.06) 0%, transparent 30%),
+        radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 75%, rgba(255, 255, 255, 0.06) 0%, transparent 45%),
+        radial-gradient(circle at 50% 10%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 30% 90%, rgba(255, 255, 255, 0.08) 0%, transparent 35%),
+        radial-gradient(circle at 70% 40%, rgba(255, 255, 255, 0.04) 0%, transparent 30%),
         linear-gradient(45deg, 
-            rgba(100, 180, 220, 0.05) 0%, 
+            rgba(255, 255, 255, 0.03) 0%, 
             transparent 25%, 
-            rgba(120, 190, 230, 0.03) 50%, 
+            rgba(255, 255, 255, 0.02) 50%, 
             transparent 75%, 
-            rgba(140, 200, 240, 0.05) 100%);
+            rgba(255, 255, 255, 0.03) 100%);
     animation: moistureShimmer 12s ease-in-out infinite;
 }
 
