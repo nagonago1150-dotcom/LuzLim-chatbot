@@ -1475,13 +1475,33 @@ body {
     margin-top: 0.5rem;
 }
 
+.promotion-banner {
+    margin: 2rem 0;
+    text-align: center;
+    animation: fadeInUp 1.5s ease-out 0.5s both;
+}
+
+.promotion-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(139, 82, 52, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 400px;
+}
+
+.promotion-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(139, 82, 52, 0.15);
+}
+
 .cta-buttons {
     display: flex;
     gap: 1.5rem;
     justify-content: center;
     margin-top: 2.5rem;
     flex-wrap: wrap;
-    animation: fadeInUp 1.5s ease-out 0.6s both;
+    animation: fadeInUp 1.5s ease-out 0.7s both;
 }
 
 .cta-button {
