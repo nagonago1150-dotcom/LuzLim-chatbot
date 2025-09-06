@@ -401,7 +401,9 @@ body {
 }
 
 .botanical-tag {
-    background: linear-gradient(145deg, rgba(218, 165, 32, 0.9) 0%, rgba(184, 134, 11, 0.9) 100%);
+    background: linear-gradient(145deg, 
+        rgba(255, 248, 240, 0.9) 0%, 
+        rgba(253, 245, 235, 0.85) 100%);
     color: #5a4037;
     padding: 0.8rem 1.5rem;
     border-radius: 20px;
@@ -420,8 +422,10 @@ body {
 
 .botanical-tag:hover {
     transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 8px 25px rgba(218, 165, 32, 0.3);
-    background: linear-gradient(145deg, rgba(255, 215, 0, 0.95) 0%, rgba(218, 165, 32, 0.95) 100%);
+    box-shadow: 0 8px 25px rgba(139, 82, 52, 0.15);
+    background: linear-gradient(145deg, 
+        rgba(255, 250, 245, 0.95) 0%, 
+        rgba(253, 247, 240, 0.9) 100%);
 }
 
 .ingredient-icon {
@@ -1214,7 +1218,12 @@ body {
 }
 
 .cta-section {
-    background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 50%, #f5f5f5 100%);
+    background: linear-gradient(135deg, 
+        rgba(255, 252, 248, 0.9) 0%, 
+        rgba(255, 250, 245, 0.85) 25%,
+        rgba(254, 248, 240, 0.8) 50%,
+        rgba(255, 250, 245, 0.85) 75%,
+        rgba(255, 252, 248, 0.9) 100%);
     color: #5a4037;
     padding: 5rem 0;
     text-align: center;
@@ -1229,14 +1238,9 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: 
-        url('botanical-pattern.jpeg'),
-        url('botanical-pattern.jpeg');
-    background-repeat: repeat, repeat;
-    background-size: 400px 300px, 600px 450px;
-    background-position: 0 0, 200px 150px;
-    opacity: 0.4;
-    animation: floatPattern 35s ease-in-out infinite;
+    background: none;
+    opacity: 0;
+    animation: none;
     filter: contrast(1.5) brightness(0.8);
     z-index: 1;
 }
@@ -1595,12 +1599,10 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('botanical-pattern.jpeg');
-    background-repeat: repeat;
-    background-size: 300px 225px;
-    opacity: 0.2;
-    animation: floatPattern 40s ease-in-out infinite;
-    filter: contrast(1.3) brightness(0.9);
+    background: none;
+    opacity: 0;
+    animation: none;
+    filter: none;
     z-index: -1;
     border-radius: 20px;
 }
@@ -1862,11 +1864,11 @@ body {
 .benefits-section {
     padding: 5rem 0;
     background: linear-gradient(180deg, 
-        rgba(252, 243, 236, 0.95) 0%, 
-        rgba(248, 238, 230, 0.9) 25%,
-        rgba(244, 233, 224, 0.85) 50%,
-        rgba(248, 238, 230, 0.9) 75%,
-        rgba(252, 243, 236, 0.95) 100%);
+        rgba(255, 252, 248, 0.85) 0%, 
+        rgba(255, 249, 242, 0.8) 25%,
+        rgba(254, 246, 236, 0.75) 50%,
+        rgba(255, 249, 242, 0.8) 75%,
+        rgba(255, 252, 248, 0.85) 100%);
     position: relative;
 }
 
@@ -1877,8 +1879,9 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 25% 75%, rgba(139, 0, 0, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 75% 25%, rgba(218, 165, 32, 0.1) 0%, transparent 50%);
+    background: 
+        radial-gradient(circle at 25% 75%, rgba(255, 248, 240, 0.3) 0%, transparent 60%),
+        radial-gradient(circle at 75% 25%, rgba(252, 243, 233, 0.25) 0%, transparent 60%);
 }
 
 .benefits-section h3 {
