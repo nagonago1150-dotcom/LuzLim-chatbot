@@ -3411,6 +3411,25 @@ body {
     }
 }
 
+/* レスポンシブ改行ユーティリティ */
+.br-mobile {
+    display: none;
+}
+
+.br-desktop {
+    display: inline;
+}
+
+@media (max-width: 768px) {
+    .br-mobile {
+        display: inline;
+    }
+    
+    .br-desktop {
+        display: none;
+    }
+}
+
 /* PC版専用：医師推奨の長いテキスト表示改善 */
 @media (min-width: 769px) {
     .feature-info .benefit-note {
