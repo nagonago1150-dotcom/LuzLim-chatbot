@@ -54,57 +54,86 @@ body {
 .ripple {
     position: absolute;
     border-radius: 50%;
-    border: 2px solid rgba(173, 216, 230, 0.15);
+    border: 4px solid rgba(100, 180, 220, 0.6);
+    background: radial-gradient(circle, rgba(173, 216, 230, 0.1) 0%, transparent 70%);
     animation: rippleExpand 8s ease-out infinite;
+    box-shadow: 
+        0 0 20px rgba(100, 180, 220, 0.3),
+        inset 0 0 20px rgba(173, 216, 230, 0.2);
 }
 
 .ripple-1 {
-    width: 200px;
-    height: 200px;
-    top: 20%;
-    left: 15%;
+    width: 300px;
+    height: 300px;
+    top: 15%;
+    left: 10%;
     animation-delay: 0s;
 }
 
 .ripple-2 {
-    width: 150px;
-    height: 150px;
-    top: 60%;
-    right: 20%;
+    width: 200px;
+    height: 200px;
+    top: 55%;
+    right: 15%;
     animation-delay: 2s;
 }
 
 .ripple-3 {
-    width: 300px;
-    height: 300px;
-    top: 80%;
-    left: 60%;
+    width: 400px;
+    height: 400px;
+    top: 75%;
+    left: 55%;
     animation-delay: 4s;
 }
 
 .ripple-4 {
-    width: 120px;
-    height: 120px;
-    top: 40%;
-    left: 70%;
+    width: 180px;
+    height: 180px;
+    top: 35%;
+    left: 65%;
     animation-delay: 6s;
+}
+
+.ripple-5 {
+    width: 250px;
+    height: 250px;
+    top: 5%;
+    right: 30%;
+    animation-delay: 1s;
+}
+
+.ripple-6 {
+    width: 160px;
+    height: 160px;
+    top: 85%;
+    left: 20%;
+    animation-delay: 5s;
 }
 
 @keyframes rippleExpand {
     0% {
-        transform: scale(0.3);
-        opacity: 0.8;
-        border-width: 3px;
+        transform: scale(0.2);
+        opacity: 0.9;
+        border-width: 5px;
+        box-shadow: 
+            0 0 30px rgba(100, 180, 220, 0.5),
+            inset 0 0 30px rgba(173, 216, 230, 0.3);
     }
     50% {
-        transform: scale(0.8);
-        opacity: 0.4;
-        border-width: 2px;
+        transform: scale(0.6);
+        opacity: 0.6;
+        border-width: 3px;
+        box-shadow: 
+            0 0 40px rgba(100, 180, 220, 0.4),
+            inset 0 0 40px rgba(173, 216, 230, 0.2);
     }
     100% {
-        transform: scale(1.5);
+        transform: scale(1.2);
         opacity: 0;
         border-width: 1px;
+        box-shadow: 
+            0 0 50px rgba(100, 180, 220, 0.1),
+            inset 0 0 50px rgba(173, 216, 230, 0.1);
     }
 }
 
@@ -117,57 +146,102 @@ body {
 
 .droplet {
     position: absolute;
-    width: 8px;
-    height: 8px;
+    width: 16px;
+    height: 16px;
     background: radial-gradient(circle at 30% 30%, 
-        rgba(173, 216, 230, 0.8) 0%, 
-        rgba(135, 206, 235, 0.6) 50%, 
-        rgba(70, 130, 180, 0.3) 100%);
+        rgba(100, 180, 220, 0.9) 0%, 
+        rgba(70, 150, 200, 0.8) 30%, 
+        rgba(50, 120, 180, 0.6) 70%, 
+        rgba(30, 90, 160, 0.4) 100%);
     border-radius: 50%;
     animation: dropletFloat 6s ease-in-out infinite;
     box-shadow: 
-        0 2px 4px rgba(173, 216, 230, 0.3),
-        inset 0 1px 2px rgba(255, 255, 255, 0.8);
+        0 4px 8px rgba(100, 180, 220, 0.6),
+        0 0 15px rgba(173, 216, 230, 0.4),
+        inset 0 2px 4px rgba(255, 255, 255, 0.9),
+        inset 0 -2px 4px rgba(50, 120, 180, 0.3);
 }
 
 .droplet-1 {
-    top: 15%;
-    left: 25%;
+    top: 12%;
+    left: 20%;
     animation-delay: 0s;
+    width: 18px;
+    height: 18px;
 }
 
 .droplet-2 {
-    top: 35%;
-    right: 30%;
+    top: 30%;
+    right: 25%;
     animation-delay: 1.2s;
+    width: 14px;
+    height: 14px;
 }
 
 .droplet-3 {
-    top: 55%;
-    left: 10%;
+    top: 50%;
+    left: 8%;
     animation-delay: 2.4s;
+    width: 20px;
+    height: 20px;
 }
 
 .droplet-4 {
-    top: 75%;
-    right: 15%;
+    top: 70%;
+    right: 12%;
     animation-delay: 3.6s;
+    width: 16px;
+    height: 16px;
 }
 
 .droplet-5 {
-    top: 25%;
-    left: 80%;
+    top: 22%;
+    left: 75%;
     animation-delay: 4.8s;
+    width: 15px;
+    height: 15px;
+}
+
+.droplet-6 {
+    top: 85%;
+    left: 30%;
+    animation-delay: 1.8s;
+    width: 17px;
+    height: 17px;
+}
+
+.droplet-7 {
+    top: 40%;
+    right: 50%;
+    animation-delay: 3s;
+    width: 14px;
+    height: 14px;
+}
+
+.droplet-8 {
+    top: 65%;
+    left: 60%;
+    animation-delay: 5.4s;
+    width: 19px;
+    height: 19px;
 }
 
 @keyframes dropletFloat {
     0%, 100% {
         transform: translateY(0px) scale(1);
-        opacity: 0.7;
+        opacity: 0.8;
+        box-shadow: 
+            0 4px 8px rgba(100, 180, 220, 0.6),
+            0 0 15px rgba(173, 216, 230, 0.4),
+            inset 0 2px 4px rgba(255, 255, 255, 0.9);
     }
     50% {
-        transform: translateY(-15px) scale(1.2);
-        opacity: 0.9;
+        transform: translateY(-20px) scale(1.3);
+        opacity: 1;
+        box-shadow: 
+            0 6px 12px rgba(100, 180, 220, 0.8),
+            0 0 25px rgba(173, 216, 230, 0.6),
+            inset 0 3px 6px rgba(255, 255, 255, 1);
     }
 }
 
@@ -177,21 +251,35 @@ body {
     width: 100%;
     height: 100%;
     background: 
-        radial-gradient(circle at 15% 25%, rgba(173, 216, 230, 0.03) 0%, transparent 30%),
-        radial-gradient(circle at 85% 75%, rgba(135, 206, 235, 0.03) 0%, transparent 35%),
-        radial-gradient(circle at 50% 10%, rgba(176, 224, 230, 0.02) 0%, transparent 40%),
-        radial-gradient(circle at 30% 90%, rgba(173, 216, 230, 0.03) 0%, transparent 25%);
+        radial-gradient(circle at 15% 25%, rgba(100, 180, 220, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 85% 75%, rgba(120, 190, 230, 0.10) 0%, transparent 45%),
+        radial-gradient(circle at 50% 10%, rgba(140, 200, 240, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 30% 90%, rgba(160, 210, 250, 0.12) 0%, transparent 35%),
+        radial-gradient(circle at 70% 40%, rgba(80, 160, 200, 0.06) 0%, transparent 30%),
+        linear-gradient(45deg, 
+            rgba(100, 180, 220, 0.05) 0%, 
+            transparent 25%, 
+            rgba(120, 190, 230, 0.03) 50%, 
+            transparent 75%, 
+            rgba(140, 200, 240, 0.05) 100%);
     animation: moistureShimmer 12s ease-in-out infinite;
 }
 
 @keyframes moistureShimmer {
     0%, 100% {
-        opacity: 0.6;
-        transform: scale(1);
-    }
-    50% {
         opacity: 0.8;
-        transform: scale(1.02);
+        transform: scale(1) rotate(0deg);
+        filter: brightness(1) contrast(1.1);
+    }
+    33% {
+        opacity: 1;
+        transform: scale(1.01) rotate(0.5deg);
+        filter: brightness(1.1) contrast(1.2);
+    }
+    66% {
+        opacity: 0.9;
+        transform: scale(1.02) rotate(-0.5deg);
+        filter: brightness(1.05) contrast(1.15);
     }
 }
 
