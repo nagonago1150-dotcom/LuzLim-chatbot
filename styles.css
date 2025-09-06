@@ -270,6 +270,83 @@ body {
     box-shadow: 0 20px 50px rgba(139, 82, 52, 0.06);
 }
 
+.combined-promo-images {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.luzlim-top-section {
+    background: linear-gradient(135deg, 
+        rgba(255, 250, 245, 0.95) 0%, 
+        rgba(253, 247, 240, 0.9) 50%,
+        rgba(251, 244, 235, 0.95) 100%);
+    border-radius: 20px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 15px 40px rgba(139, 82, 52, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(139, 82, 52, 0.1);
+}
+
+.luzlim-features-display {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    text-align: center;
+}
+
+.feature-badge-large {
+    background: linear-gradient(145deg, 
+        rgba(139, 82, 52, 0.9) 0%, 
+        rgba(166, 104, 71, 0.85) 50%, 
+        rgba(139, 82, 52, 0.9) 100%);
+    color: #2c1810;
+    padding: 1rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-align: center;
+    box-shadow: 
+        0 6px 20px rgba(139, 82, 52, 0.12),
+        0 2px 8px rgba(139, 82, 52, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(139, 82, 52, 0.15);
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+.feature-badge-large:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 8px 25px rgba(139, 82, 52, 0.18),
+        0 3px 12px rgba(139, 82, 52, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.luzlim-subscription-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subscription-offer-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(139, 82, 52, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.subscription-offer-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(139, 82, 52, 0.15);
+}
+
 .hero-cta-section {
     margin-top: 1.5rem;
     margin-bottom: 1rem;
