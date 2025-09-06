@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 * {
     margin: 0;
@@ -7,10 +7,10 @@
 }
 
 body {
-    font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    line-height: 1.6;
-    color: #1a1a1a;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #000000 100%);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.7;
+    color: #2c2c2c;
+    background: linear-gradient(135deg, #faf9f7 0%, #f5f2ed 50%, #f0ebe3 100%);
     background-attachment: fixed;
     /* パフォーマンス最適化 */
     -webkit-font-smoothing: antialiased;
@@ -29,14 +29,14 @@ body {
 
 .hero-header {
     position: relative;
-    min-height: clamp(500px, 85vh, 700px);
+    min-height: clamp(600px, 90vh, 800px);
     height: auto;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 50%, #f5f5f5 100%);
-    padding: clamp(10px, 2vh, 25px) 0;
+    background: linear-gradient(135deg, #2c1810 0%, #4a2c1a 25%, #6d3f26 50%, #8b5234 75%, #a66847 100%);
+    padding: clamp(20px, 4vh, 40px) 0;
     box-sizing: border-box;
 }
 
@@ -117,20 +117,23 @@ body {
 }
 
 .botanical-frame {
-    background: linear-gradient(145deg, rgba(0, 0, 0, 0.95) 0%, rgba(20, 20, 20, 0.9) 100%);
-    border: 2px solid rgba(218, 165, 32, 0.3);
-    border-radius: 25px;
-    padding: 1.5rem 1.2rem;
+    background: linear-gradient(145deg, 
+        rgba(255, 248, 240, 0.95) 0%, 
+        rgba(250, 243, 232, 0.9) 50%,
+        rgba(245, 238, 225, 0.95) 100%);
+    border: 2px solid rgba(139, 82, 52, 0.2);
+    border-radius: 30px;
+    padding: 2.5rem 2rem;
     box-shadow: 
-        0 20px 60px rgba(0, 0, 0, 0.4),
-        0 0 0 1px rgba(218, 165, 32, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
+        0 25px 80px rgba(139, 82, 52, 0.15),
+        0 0 0 1px rgba(139, 82, 52, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
     position: relative;
     overflow: hidden;
     transform: translateZ(0);
     margin: 0 auto;
-    max-width: 550px;
+    max-width: 600px;
     width: 100%;
     box-sizing: border-box;
 }
@@ -148,45 +151,46 @@ body {
 }
 
 .hero-header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3rem;
-    margin-bottom: 0.8rem;
-    font-weight: 700;
-    color: #ffffff;
-    letter-spacing: 1.5px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: #2c1810;
+    letter-spacing: 2px;
     animation: fadeInUp 1.5s ease-out;
     text-transform: uppercase;
     text-shadow: 
-        0 4px 8px rgba(0, 0, 0, 0.8),
-        0 0 30px rgba(218, 165, 32, 0.3);
+        0 2px 4px rgba(139, 82, 52, 0.1),
+        0 0 20px rgba(139, 82, 52, 0.05);
     position: relative;
-    line-height: 1;
+    line-height: 1.1;
 }
 
 .hero-header h1::after {
     content: '';
     position: absolute;
-    bottom: -8px;
+    bottom: -12px;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(90deg, transparent, #DAA520, transparent);
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #8b5234, transparent);
     border-radius: 2px;
 }
 
 .hero-header .subtitle {
-    font-size: 1.3rem;
-    color: #DAA520;
-    font-weight: 700;
-    letter-spacing: 0.6px;
-    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+    color: #8b5234;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
     animation: fadeInUp 1.5s ease-out 0.3s both;
     text-shadow: 
-        1px 1px 3px rgba(0, 0, 0, 0.7),
-        0 0 20px rgba(218, 165, 32, 0.4);
-    line-height: 1.2;
-    padding: 0 0.3rem;
+        0 1px 2px rgba(139, 82, 52, 0.1),
+        0 0 10px rgba(139, 82, 52, 0.05);
+    line-height: 1.4;
+    padding: 0 0.5rem;
+    font-style: italic;
 }
 
 .product-features {
@@ -199,31 +203,31 @@ body {
 }
 
 .feature-badge {
-    background: linear-gradient(145deg, #DAA520 0%, #FFD700 50%, #DAA520 100%);
-    color: #000000;
-    padding: 0.8rem 1.5rem;
-    border-radius: 25px;
-    font-weight: 600;
-    font-size: 0.95rem;
+    background: linear-gradient(145deg, #8b5234 0%, #a66847 50%, #8b5234 100%);
+    color: #ffffff;
+    padding: 1rem 1.8rem;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 0.9rem;
     text-align: center;
     box-shadow: 
-        0 6px 20px rgba(218, 165, 32, 0.4),
-        0 2px 8px rgba(0, 0, 0, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    border: 1px solid rgba(184, 134, 11, 0.5);
+        0 8px 25px rgba(139, 82, 52, 0.25),
+        0 3px 10px rgba(44, 24, 16, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(139, 82, 52, 0.3);
     transition: all 0.3s ease;
     position: relative;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.8px;
     transform: translateZ(0);
 }
 
 .feature-badge:hover {
     transform: translateY(-3px) scale(1.02);
     box-shadow: 
-        0 8px 25px rgba(218, 165, 32, 0.5),
-        0 4px 12px rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.4);
-    background: linear-gradient(145deg, #FFD700 0%, #DAA520 50%, #FFD700 100%);
+        0 10px 30px rgba(139, 82, 52, 0.35),
+        0 5px 15px rgba(44, 24, 16, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    background: linear-gradient(145deg, #a66847 0%, #8b5234 50%, #a66847 100%);
 }
 
 .hero-image-section {
@@ -253,22 +257,22 @@ body {
 }
 
 .hero-consultation-btn {
-    background: linear-gradient(145deg, #DAA520 0%, #FFD700 50%, #DAA520 100%);
-    color: #000000;
+    background: linear-gradient(145deg, #8b5234 0%, #a66847 50%, #8b5234 100%);
+    color: #ffffff;
     border: none;
-    padding: 1.2rem 2.5rem;
+    padding: 1.3rem 2.8rem;
     border-radius: 50px;
-    font-weight: 700;
-    font-size: 1.1rem;
+    font-weight: 600;
+    font-size: 1rem;
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 
-        0 8px 25px rgba(218, 165, 32, 0.4),
-        0 4px 12px rgba(0, 0, 0, 0.2),
-        inset 0 2px 0 rgba(255, 255, 255, 0.3),
-        inset 0 -2px 0 rgba(0, 0, 0, 0.1);
+        0 10px 30px rgba(139, 82, 52, 0.3),
+        0 5px 15px rgba(44, 24, 16, 0.1),
+        inset 0 2px 0 rgba(255, 255, 255, 0.15),
+        inset 0 -2px 0 rgba(44, 24, 16, 0.1);
     font-family: inherit;
-    letter-spacing: 1px;
+    letter-spacing: 1.2px;
     text-transform: uppercase;
     position: relative;
     overflow: hidden;
@@ -439,8 +443,8 @@ body {
 }
 
 .hero {
-    background: linear-gradient(180deg, #1a1a1a 0%, #000000 100%);
-    padding: 5rem 0;
+    background: linear-gradient(180deg, #f5f2ed 0%, #f0ebe3 100%);
+    padding: 4rem 0;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -454,9 +458,9 @@ body {
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(circle at 20% 80%, rgba(218, 165, 32, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(218, 165, 32, 0.08) 0%, transparent 50%);
+        radial-gradient(circle at 20% 80%, rgba(139, 82, 52, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(166, 104, 71, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(139, 82, 52, 0.04) 0%, transparent 50%);
     animation: heroFloat 12s ease-in-out infinite;
     z-index: 1;
 }
@@ -479,14 +483,14 @@ body {
 }
 
 .hero h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
-    margin-bottom: 2rem;
-    color: #DAA520;
-    font-weight: 700;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: #2c1810;
+    font-weight: 600;
     position: relative;
     z-index: 2;
-    background: linear-gradient(45deg, #DAA520, #FFD700, #FFA500, #FFD700, #DAA520);
+    background: linear-gradient(45deg, #2c1810, #8b5234, #a66847, #8b5234, #2c1810);
     background-size: 400% 400%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
