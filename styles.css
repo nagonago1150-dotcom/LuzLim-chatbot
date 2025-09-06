@@ -1707,7 +1707,7 @@ main {
 }
 
 .price-main {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Inter', sans-serif;
     font-size: 5.5rem;
     font-weight: 900;
     color: #DAA520;
@@ -1715,8 +1715,9 @@ main {
         3px 3px 10px rgba(139, 82, 52, 0.2),
         0 0 30px rgba(218, 165, 32, 0.6),
         0 0 60px rgba(255, 215, 0, 0.3);
-    letter-spacing: 3px;
+    letter-spacing: 4px;
     display: inline-block;
+    font-feature-settings: 'tnum' 1;
     background: linear-gradient(45deg, #DAA520, #FFD700, #FFA500, #FFD700, #DAA520);
     background-size: 400% 400%;
     -webkit-background-clip: text;
@@ -1809,16 +1810,17 @@ main {
 }
 
 .guarantee {
-    color: #228B22;
+    color: #B8860B;
     font-weight: 700;
     font-size: 1.3rem;
     text-shadow: 1px 1px 3px rgba(139, 82, 52, 0.12);
-    border: 2px solid #228B22;
+    border: 2px solid #DAA520;
     padding: 0.8rem 1.5rem;
     border-radius: 25px;
-    background: rgba(34, 139, 34, 0.1);
+    background: linear-gradient(145deg, rgba(218, 165, 32, 0.15), rgba(255, 215, 0, 0.1));
     display: inline-block;
     margin-top: 0.5rem;
+    box-shadow: 0 4px 15px rgba(218, 165, 32, 0.2);
 }
 
 .promotion-banner {
