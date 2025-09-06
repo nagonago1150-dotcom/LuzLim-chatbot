@@ -10,7 +10,17 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.7;
     color: #5a4037;
-    background: linear-gradient(135deg, #ffffff 0%, #fefcfa 25%, #fdf9f5 50%, #fcf7f0 75%, #faf5eb 100%);
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(255, 240, 235, 0.6) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(250, 235, 225, 0.5) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(248, 230, 220, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(252, 245, 240, 0.3) 0%, transparent 50%),
+        linear-gradient(135deg, 
+            rgba(255, 252, 248, 0.95) 0%, 
+            rgba(254, 249, 243, 0.9) 25%, 
+            rgba(253, 246, 238, 0.85) 50%, 
+            rgba(252, 243, 233, 0.9) 75%, 
+            rgba(250, 240, 228, 0.95) 100%);
     background-attachment: fixed;
     /* パフォーマンス最適化 */
     -webkit-font-smoothing: antialiased;
@@ -35,12 +45,16 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, 
-        rgba(255, 248, 240, 0.9) 0%, 
-        rgba(251, 243, 232, 0.85) 25%, 
-        rgba(248, 238, 225, 0.8) 50%, 
-        rgba(245, 233, 218, 0.85) 75%, 
-        rgba(242, 228, 211, 0.9) 100%);
+    background: 
+        radial-gradient(circle at 30% 20%, rgba(255, 245, 238, 0.8) 0%, transparent 60%),
+        radial-gradient(circle at 70% 80%, rgba(252, 240, 230, 0.7) 0%, transparent 60%),
+        radial-gradient(circle at 50% 50%, rgba(248, 235, 225, 0.6) 0%, transparent 70%),
+        linear-gradient(135deg, 
+            rgba(255, 250, 245, 0.85) 0%, 
+            rgba(253, 247, 240, 0.8) 25%, 
+            rgba(251, 244, 235, 0.75) 50%, 
+            rgba(249, 241, 230, 0.8) 75%, 
+            rgba(247, 238, 225, 0.85) 100%);
     padding: clamp(20px, 4vh, 40px) 0;
     box-sizing: border-box;
 }
@@ -52,7 +66,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: 1;
-    opacity: 0.6;
+    opacity: 0.15;
 }
 
 .botanical-pattern {
@@ -65,7 +79,7 @@ body {
     background-size: 400px 300px, 600px 450px;
     background-position: 0 0, 200px 150px;
     animation: floatPattern 30s ease-in-out infinite;
-    filter: contrast(1.8) brightness(0.7);
+    filter: contrast(0.8) brightness(1.2) opacity(0.3);
 }
 
 .botanical-pattern::before {
@@ -90,14 +104,17 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        135deg,
-        rgba(255, 255, 255, 0.1) 0%,
-        rgba(0, 0, 0, 0.05) 25%,
-        rgba(218, 165, 32, 0.1) 50%,
-        rgba(0, 0, 0, 0.05) 75%,
-        rgba(255, 255, 255, 0.1) 100%
-    );
+    background: 
+        radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(255, 248, 240, 0.25) 0%, transparent 50%),
+        radial-gradient(circle at 50% 10%, rgba(252, 240, 230, 0.2) 0%, transparent 60%),
+        linear-gradient(135deg,
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(255, 250, 245, 0.05) 25%,
+            rgba(251, 244, 235, 0.08) 50%,
+            rgba(255, 250, 245, 0.05) 75%,
+            rgba(255, 255, 255, 0.1) 100%
+        );
     z-index: 2;
 }
 
@@ -581,7 +598,12 @@ body {
 
 .features {
     padding: 5rem 0;
-    background: linear-gradient(180deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+    background: linear-gradient(180deg, 
+        rgba(252, 243, 236, 0.95) 0%, 
+        rgba(248, 238, 230, 0.9) 25%,
+        rgba(244, 233, 224, 0.85) 50%,
+        rgba(248, 238, 230, 0.9) 75%,
+        rgba(252, 243, 236, 0.95) 100%);
     position: relative;
 }
 
@@ -693,7 +715,9 @@ body {
     color: #DAA520;
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 8px 25px rgba(218, 165, 32, 0.3);
-    background: linear-gradient(145deg, #3a3a3a 0%, #2a2a2a 100%);
+    background: linear-gradient(145deg, 
+        rgba(255, 248, 240, 0.9) 0%, 
+        rgba(253, 246, 235, 0.85) 100%);
 }
 
 .tab-button:hover::before {
@@ -813,7 +837,9 @@ body {
 .ingredient-circle {
     position: relative;
     z-index: 2;
-    background: linear-gradient(145deg, #2a2a2a 0%, #1a1a1a 100%);
+    background: linear-gradient(145deg, 
+        rgba(248, 238, 230, 0.9) 0%, 
+        rgba(244, 233, 224, 0.85) 100%);
     border-radius: 50%;
     width: 80px;
     height: 80px;
@@ -1223,7 +1249,12 @@ body {
     text-shadow: 
         2px 2px 6px rgba(0, 0, 0, 0.5),
         0 0 25px rgba(218, 165, 32, 0.4);
-    background: linear-gradient(45deg, #1a1a1a, #DAA520, #FFD700, #DAA520, #1a1a1a);
+    background: linear-gradient(45deg, 
+        rgba(244, 233, 224, 0.9), 
+        rgba(218, 165, 32, 0.8), 
+        rgba(255, 215, 0, 0.7), 
+        rgba(218, 165, 32, 0.8), 
+        rgba(244, 233, 224, 0.9));
     background-size: 400% 400%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -1828,7 +1859,12 @@ body {
 /* 効果・メリットセクション */
 .benefits-section {
     padding: 5rem 0;
-    background: linear-gradient(180deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+    background: linear-gradient(180deg, 
+        rgba(252, 243, 236, 0.95) 0%, 
+        rgba(248, 238, 230, 0.9) 25%,
+        rgba(244, 233, 224, 0.85) 50%,
+        rgba(248, 238, 230, 0.9) 75%,
+        rgba(252, 243, 236, 0.95) 100%);
     position: relative;
 }
 
@@ -1910,7 +1946,9 @@ body {
 
 .concern-illustration,
 .solution-illustration {
-    background: linear-gradient(145deg, #1a1a1a 0%, #2a2a2a 100%);
+    background: linear-gradient(145deg, 
+        rgba(244, 233, 224, 0.9) 0%, 
+        rgba(248, 238, 230, 0.85) 100%);
     border-radius: 20px;
     padding: 3rem 2rem;
     text-align: center;
@@ -2203,7 +2241,9 @@ body {
 }
 
 .kalcala-badge {
-    background: linear-gradient(145deg, #1a1a1a 0%, #2a2a2a 100%);
+    background: linear-gradient(145deg, 
+        rgba(244, 233, 224, 0.9) 0%, 
+        rgba(248, 238, 230, 0.85) 100%);
     border: 2px solid #DAA520;
     border-radius: 15px;
     padding: 1rem 1.5rem;
