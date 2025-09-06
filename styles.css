@@ -222,7 +222,7 @@ body {
         rgba(139, 82, 52, 0.9) 0%, 
         rgba(166, 104, 71, 0.85) 50%, 
         rgba(139, 82, 52, 0.9) 100%);
-    color: #ffffff;
+    color: #3e2723;
     padding: 1rem 1.8rem;
     border-radius: 30px;
     font-weight: 600;
@@ -281,7 +281,7 @@ body {
         rgba(139, 82, 52, 0.95) 0%, 
         rgba(166, 104, 71, 0.9) 50%, 
         rgba(139, 82, 52, 0.95) 100%);
-    color: #ffffff;
+    color: #3e2723;
     border: none;
     padding: 1.3rem 2.8rem;
     border-radius: 50px;
@@ -375,16 +375,21 @@ body {
 }
 
 .detail-item {
-    background: rgba(255, 255, 255, 0.15);
-    color: #ffffff;
+    background: linear-gradient(145deg, 
+        rgba(255, 255, 255, 0.4) 0%, 
+        rgba(254, 250, 245, 0.35) 100%);
+    color: #2c1810;
     padding: 0.5rem 1rem;
     border-radius: 15px;
     font-size: 0.9rem;
     font-weight: 600;
     letter-spacing: 0.5px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    text-shadow: 0 1px 2px rgba(139, 82, 52, 0.12);
-    backdrop-filter: blur(5px);
+    border: 1px solid rgba(139, 82, 52, 0.15);
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    box-shadow: 
+        0 4px 12px rgba(139, 82, 52, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
 .detail-separator {
@@ -689,7 +694,7 @@ body {
     background: linear-gradient(145deg, 
         rgba(139, 82, 52, 0.9) 0%, 
         rgba(166, 104, 71, 0.85) 100%);
-    color: #ffffff;
+    color: #3e2723;
     border-color: rgba(139, 82, 52, 0.4);
     box-shadow: 0 6px 20px rgba(139, 82, 52, 0.2);
     transform: translateY(-2px);
@@ -1218,12 +1223,16 @@ body {
 }
 
 .cta-section {
-    background: linear-gradient(135deg, 
-        rgba(255, 252, 248, 0.9) 0%, 
-        rgba(255, 250, 245, 0.85) 25%,
-        rgba(254, 248, 240, 0.8) 50%,
-        rgba(255, 250, 245, 0.85) 75%,
-        rgba(255, 252, 248, 0.9) 100%);
+    background: 
+        radial-gradient(circle at 30% 20%, rgba(255, 245, 238, 0.8) 0%, transparent 60%),
+        radial-gradient(circle at 70% 80%, rgba(252, 240, 230, 0.7) 0%, transparent 60%),
+        radial-gradient(circle at 50% 50%, rgba(248, 235, 225, 0.6) 0%, transparent 70%),
+        linear-gradient(135deg, 
+            rgba(255, 250, 245, 0.85) 0%, 
+            rgba(253, 247, 240, 0.8) 25%, 
+            rgba(251, 244, 235, 0.75) 50%, 
+            rgba(249, 241, 230, 0.8) 75%, 
+            rgba(247, 238, 225, 0.85) 100%);
     color: #5a4037;
     padding: 5rem 0;
     text-align: center;
@@ -1441,7 +1450,7 @@ body {
 .cta-button.primary {
     background: linear-gradient(145deg, #8B0000 0%, #DC143C 50%, #FF4500 100%);
     background-size: 300% 300%;
-    color: #ffffff;
+    color: #3e2723;
     border: 3px solid #DAA520;
     box-shadow: 
         0 8px 25px rgba(139, 0, 0, 0.5),
