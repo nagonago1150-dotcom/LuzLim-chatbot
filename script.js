@@ -238,7 +238,7 @@ class LuzlimChatbot {
                 linkButton.style.cssText = `
                     display: inline-block;
                     background: linear-gradient(145deg, #DAA520 0%, #FFD700 50%, #DAA520 100%);
-                    color: #000000;
+                    color: #5a4037;
                     padding: 12px 24px;
                     border-radius: 25px;
                     text-decoration: none;
