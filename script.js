@@ -173,8 +173,8 @@ class LuzlimChatbot {
                 const imageContent = document.createElement('div');
                 imageContent.className = 'message-content';
                 const img = document.createElement('img');
-                img.src = 'hero-main-image.jpg';
-                img.alt = 'LuzLim特別キャンペーン';
+                img.src = 'luzlim-chat-promo.png';
+                img.alt = 'LuzLim定期便特別価格1,980円';
                 img.style.width = '100%';
                 img.style.borderRadius = '8px';
                 img.style.cursor = 'pointer';
