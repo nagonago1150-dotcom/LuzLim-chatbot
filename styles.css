@@ -3964,6 +3964,11 @@ body {
         writing-mode: horizontal-tb !important;
         text-orientation: mixed !important;
         text-combine-upright: none !important;
+        transform: rotate(-90deg);
+        transform-origin: center center;
+        width: fit-content;
+        height: fit-content;
+        white-space: nowrap;
     }
     
     .kalcala-badge span {
@@ -3971,7 +3976,8 @@ body {
         text-orientation: mixed !important;
         text-combine-upright: none !important;
         font-family: 'Inter', sans-serif !important;
-        display: inline-block !important;
+        display: block !important;
+        margin-bottom: 2px !important;
     }
     
     .kalcala-badge small {
@@ -3979,8 +3985,9 @@ body {
         text-orientation: mixed !important;
         text-combine-upright: none !important;
         font-family: 'Inter', sans-serif !important;
-        display: inline-block !important;
+        display: block !important;
         font-size: 10px;
+        line-height: 1.2;
     }
     
     /* 価格セクション */
