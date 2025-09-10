@@ -2831,6 +2831,8 @@ body {
     font-weight: 700;
     color: #DAA520;
     margin-bottom: 0.3rem;
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
 }
 
 .kalcala-badge small {
@@ -3682,6 +3684,8 @@ body {
     
     .kalcala-badge span {
         font-size: 1.1rem;
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
     }
     
     .scientific-evidence {
@@ -4099,6 +4103,11 @@ body {
     .hero-consultation-btn {
         font-size: 14px;
         padding: 12px 15px;
+    }
+    
+    .kalcala-badge span {
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
     }
 }
 
