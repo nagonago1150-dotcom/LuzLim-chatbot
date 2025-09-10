@@ -619,7 +619,7 @@ main {
     color: #4a2c1a;
     letter-spacing: 2px;
     animation: fadeInUp 1.5s ease-out;
-    text-transform: uppercase;
+    text-transform: none;
     text-shadow: 
         0 2px 8px rgba(255, 255, 255, 0.8),
         0 1px 4px rgba(139, 82, 52, 0.3);
