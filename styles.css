@@ -3961,9 +3961,25 @@ body {
         font-size: 12px;
         padding: 8px 12px;
         margin-top: 8px;
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+        text-combine-upright: none !important;
+    }
+    
+    .kalcala-badge span {
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+        text-combine-upright: none !important;
+        font-family: 'Inter', sans-serif !important;
+        display: inline-block !important;
     }
     
     .kalcala-badge small {
+        writing-mode: horizontal-tb !important;
+        text-orientation: mixed !important;
+        text-combine-upright: none !important;
+        font-family: 'Inter', sans-serif !important;
+        display: inline-block !important;
         font-size: 10px;
     }
     
