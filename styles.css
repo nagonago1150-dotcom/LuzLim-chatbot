@@ -2822,17 +2822,20 @@ body {
     padding: 1rem 1.5rem;
     text-align: center;
     box-shadow: 0 6px 20px rgba(139, 82, 52, 0.08);
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
 }
 
 .kalcala-badge span {
     display: block;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Inter', 'Playfair Display', serif;
     font-size: 1.2rem;
     font-weight: 700;
     color: #DAA520;
     margin-bottom: 0.3rem;
-    writing-mode: horizontal-tb;
-    text-orientation: mixed;
+    writing-mode: horizontal-tb !important;
+    text-orientation: mixed !important;
+    text-combine-upright: none !important;
 }
 
 .kalcala-badge small {
