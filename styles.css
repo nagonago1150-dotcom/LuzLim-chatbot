@@ -2784,12 +2784,20 @@ body {
 }
 
 .concern-image {
-    width: 120px;
-    height: 90px;
+    width: 140px;
+    height: 105px;
     object-fit: cover;
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(139, 82, 52, 0.06);
     border: 3px solid #CD853F;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: high-quality;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 .solution-image {
