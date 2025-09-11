@@ -1917,87 +1917,86 @@ main {
 }
 
 .price {
-    margin: 3rem 0;
+    margin: 3.5rem 0;
     position: relative;
     z-index: 2;
     background: linear-gradient(145deg, 
-        rgba(255, 255, 255, 0.95), 
-        rgba(255, 250, 245, 0.9));
-    backdrop-filter: blur(10px);
-    border-radius: 25px;
-    padding: 3rem 2rem;
+        rgba(248, 250, 253, 0.98), 
+        rgba(243, 247, 252, 0.95),
+        rgba(238, 244, 251, 0.9));
+    backdrop-filter: blur(15px);
+    border-radius: 30px;
+    padding: 4rem 3rem;
     box-shadow: 
-        0 25px 60px rgba(139, 82, 52, 0.08),
-        0 8px 25px rgba(218, 165, 32, 0.05),
-        inset 0 1px 0 rgba(255, 255, 255, 0.6);
-    border: 1px solid rgba(218, 165, 32, 0.1);
-    animation: priceGlow 4s ease-in-out infinite alternate;
+        0 30px 80px rgba(15, 23, 42, 0.08),
+        0 10px 30px rgba(51, 65, 85, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8),
+        inset 0 -1px 0 rgba(148, 163, 184, 0.1);
+    border: 1px solid rgba(203, 213, 225, 0.3);
+    animation: luxuryGlow 5s ease-in-out infinite alternate;
 }
 
-@keyframes priceGlow {
+@keyframes luxuryGlow {
     0% {
         box-shadow: 
-            0 25px 60px rgba(139, 82, 52, 0.08),
-            0 8px 25px rgba(218, 165, 32, 0.05),
-            inset 0 1px 0 rgba(255, 255, 255, 0.6);
+            0 30px 80px rgba(15, 23, 42, 0.08),
+            0 10px 30px rgba(51, 65, 85, 0.06),
+            inset 0 1px 0 rgba(255, 255, 255, 0.8),
+            inset 0 -1px 0 rgba(148, 163, 184, 0.1);
+        transform: translateY(0);
     }
     100% {
         box-shadow: 
-            0 30px 70px rgba(139, 82, 52, 0.12),
-            0 12px 35px rgba(218, 165, 32, 0.08),
-            inset 0 1px 0 rgba(255, 255, 255, 0.8),
-            0 0 40px rgba(218, 165, 32, 0.03);
+            0 35px 90px rgba(15, 23, 42, 0.12),
+            0 15px 40px rgba(51, 65, 85, 0.08),
+            inset 0 1px 0 rgba(255, 255, 255, 0.9),
+            inset 0 -1px 0 rgba(148, 163, 184, 0.15),
+            0 0 60px rgba(59, 130, 246, 0.02);
+        transform: translateY(-2px);
     }
 }
 
+.price-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
 .regular-price {
-    font-size: 1.4rem;
-    color: #8B4513;
+    font-size: 1.3rem;
+    color: #64748b;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.strike-through {
     text-decoration: line-through;
     opacity: 0.7;
-    margin-bottom: 1.5rem;
     font-weight: 500;
-    position: relative;
-    text-align: center;
-}
-
-.regular-price::before {
-    content: '通常価格';
-    position: absolute;
-    top: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.9rem;
-    font-weight: 400;
-    color: #6d4c41;
-    opacity: 0.8;
-}
-
-.discount-info {
-    display: flex;
-    gap: 1.2rem;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
-    position: relative;
 }
 
 .discount-badge {
-    background: linear-gradient(135deg, #DAA520 0%, #FFD700 50%, #FFA500 100%);
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border-radius: 30px;
+    display: inline-block;
+    background: linear-gradient(135deg, 
+        #1e293b 0%, 
+        #334155 30%, 
+        #475569 70%, 
+        #64748b 100%);
+    color: #f8fafc;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
     font-size: 1.1rem;
-    font-weight: 700;
+    font-weight: 600;
+    letter-spacing: 0.8px;
     box-shadow: 
-        0 8px 25px rgba(218, 165, 32, 0.35),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    transform: scale(1);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        0 8px 25px rgba(30, 41, 59, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        inset 0 -1px 0 rgba(15, 23, 42, 0.2);
     position: relative;
     overflow: hidden;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .discount-badge::before {
@@ -2007,116 +2006,86 @@ main {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    animation: shimmer 2.5s infinite;
+    background: linear-gradient(
+        45deg, 
+        transparent 30%, 
+        rgba(226, 232, 240, 0.1) 50%, 
+        transparent 70%
+    );
+    animation: luxuryShimmer 3s infinite;
     transform: rotate(45deg);
 }
 
-@keyframes shimmer {
+@keyframes luxuryShimmer {
     0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
     100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
 }
 
 .discount-badge:hover {
-    transform: scale(1.08) translateY(-2px);
+    transform: scale(1.05) translateY(-1px);
     box-shadow: 
-        0 12px 35px rgba(218, 165, 32, 0.45),
-        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        0 12px 35px rgba(30, 41, 59, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15),
+        inset 0 -1px 0 rgba(15, 23, 42, 0.25);
 }
 
-.extra-discount {
-    background: linear-gradient(135deg, #B8860B 0%, #DAA520 50%, #CD853F 100%);
-    color: white;
-    padding: 0.8rem 1.5rem;
-    border-radius: 30px;
-    font-size: 1.1rem;
-    font-weight: 700;
-    box-shadow: 
-        0 8px 25px rgba(184, 134, 11, 0.35),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    transform: scale(1);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+.price-main-container {
+    text-align: center;
+    margin: 2.5rem 0;
     position: relative;
-    overflow: hidden;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.85; }
-}
-
-.extra-discount::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    animation: shimmer 2.5s infinite 0.5s;
-    transform: rotate(45deg);
-}
-
-.extra-discount:hover {
-    transform: scale(1.08) translateY(-2px);
-    box-shadow: 
-        0 12px 35px rgba(184, 134, 11, 0.45),
-        inset 0 1px 0 rgba(255, 255, 255, 0.4);
-    animation: none;
 }
 
 .price-main {
     font-family: 'Playfair Display', serif;
-    font-size: 6.5rem;
-    font-weight: 900;
-    background: linear-gradient(135deg, #8B4513 0%, #A0522D  30%, #CD853F 70%, #DAA520 100%);
+    font-size: 7rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, 
+        #0f172a 0%, 
+        #1e293b 20%,
+        #334155 40%,
+        #475569 60%,
+        #64748b 80%,
+        #94a3b8 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-shadow: none;
-    letter-spacing: 2px;
-    display: inline-block;
+    letter-spacing: -2px;
+    display: block;
     font-feature-settings: 'tnum' 1;
     position: relative;
     transform: scale(1);
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    margin: 1rem 0;
-    animation: priceMainGlow 3s ease-in-out infinite alternate;
+    animation: luxuryPriceGlow 4s ease-in-out infinite alternate;
+    line-height: 0.9;
 }
 
-@keyframes priceMainGlow {
+@keyframes luxuryPriceGlow {
     0% {
-        filter: drop-shadow(0 5px 15px rgba(139, 69, 19, 0.3));
+        filter: drop-shadow(0 8px 20px rgba(15, 23, 42, 0.15));
         transform: scale(1);
     }
     100% {
-        filter: drop-shadow(0 8px 25px rgba(218, 165, 32, 0.4));
-        transform: scale(1.02);
+        filter: drop-shadow(0 12px 30px rgba(30, 41, 59, 0.2));
+        transform: scale(1.01);
     }
 }
 
 .price-main:hover {
-    transform: scale(1.05);
-    filter: drop-shadow(0 10px 30px rgba(218, 165, 32, 0.5));
+    transform: scale(1.02);
+    filter: drop-shadow(0 15px 35px rgba(30, 41, 59, 0.25));
 }
 
 .price-sub {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: #8B4513;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #64748b;
     margin-top: 0.5rem;
     display: block;
     text-align: center;
     position: relative;
     z-index: 1;
-    background: linear-gradient(135deg, rgba(218, 165, 32, 0.1), rgba(255, 215, 0, 0.05));
-    border-radius: 20px;
-    padding: 0.8rem 1.5rem;
-    border: 2px solid rgba(218, 165, 32, 0.2);
-    box-shadow: 0 4px 15px rgba(218, 165, 32, 0.1);
-    animation: fadeInUp 1s ease-out 0.5s both;
+    letter-spacing: 1px;
+    opacity: 0.8;
 }
 
 .price-details {
@@ -2144,64 +2113,48 @@ main {
     font-weight: 600;
 }
 
-.guarantee {
-    color: #B8860B;
-    font-weight: 700;
-    font-size: 1.4rem;
-    text-shadow: 0 2px 4px rgba(139, 82, 52, 0.15);
-    border: 3px solid #DAA520;
-    padding: 1.2rem 2rem;
-    border-radius: 35px;
-    background: linear-gradient(145deg, 
-        rgba(218, 165, 32, 0.2), 
-        rgba(255, 215, 0, 0.15),
-        rgba(255, 250, 205, 0.1));
+.price-guarantee {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.guarantee-text {
     display: inline-block;
-    margin-top: 1.5rem;
+    color: #475569;
+    font-weight: 600;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    background: linear-gradient(145deg, 
+        rgba(241, 245, 249, 0.8), 
+        rgba(248, 250, 252, 0.6));
+    border: 2px solid rgba(203, 213, 225, 0.4);
     box-shadow: 
-        0 8px 25px rgba(218, 165, 32, 0.25),
-        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        0 6px 20px rgba(15, 23, 42, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7);
     position: relative;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    animation: guaranteePulse 2.5s ease-in-out infinite;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
 }
 
-@keyframes guaranteePulse {
-    0%, 100% {
-        box-shadow: 
-            0 8px 25px rgba(218, 165, 32, 0.25),
-            inset 0 1px 0 rgba(255, 255, 255, 0.4);
-    }
-    50% {
-        box-shadow: 
-            0 12px 35px rgba(218, 165, 32, 0.35),
-            inset 0 1px 0 rgba(255, 255, 255, 0.5),
-            0 0 20px rgba(218, 165, 32, 0.1);
-    }
-}
-
-.guarantee::before {
+.guarantee-text::before {
     content: '✓';
     position: absolute;
-    left: 1rem;
+    left: 1.2rem;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 1.2rem;
-    color: #DAA520;
-    font-weight: 900;
+    font-size: 1rem;
+    color: #10b981;
+    font-weight: 700;
 }
 
-.guarantee:hover {
-    transform: translateY(-3px) scale(1.05);
-    border-color: #FFD700;
-    background: linear-gradient(145deg, 
-        rgba(255, 215, 0, 0.25), 
-        rgba(255, 250, 205, 0.2),
-        rgba(255, 255, 224, 0.15));
+.guarantee-text:hover {
+    transform: translateY(-1px);
     box-shadow: 
-        0 15px 40px rgba(218, 165, 32, 0.4),
-        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+        0 8px 25px rgba(15, 23, 42, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    border-color: rgba(148, 163, 184, 0.3);
 }
 
 .promotion-banner {
@@ -2252,20 +2205,25 @@ main {
 }
 
 .cta-button.primary {
-    background: linear-gradient(145deg, #8B0000 0%, #DC143C 50%, #FF4500 100%);
+    background: linear-gradient(145deg, 
+        #0f172a 0%, 
+        #1e293b 30%, 
+        #334155 70%, 
+        #475569 100%);
     background-size: 300% 300%;
-    color: #3e2723;
-    border: 3px solid #DAA520;
+    color: #f8fafc;
+    border: 2px solid rgba(148, 163, 184, 0.3);
     box-shadow: 
-        0 8px 25px rgba(139, 0, 0, 0.5),
-        0 0 40px rgba(220, 20, 60, 0.3),
-        inset 0 2px 4px rgba(255, 255, 255, 0.2);
-    animation: ctaButtonPulse 3s ease-in-out infinite;
+        0 12px 35px rgba(15, 23, 42, 0.25),
+        0 6px 20px rgba(30, 41, 59, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    animation: luxuryButtonGlow 4s ease-in-out infinite;
     position: relative;
     overflow: hidden;
-    font-weight: 700;
-    letter-spacing: 1px;
-    transform: perspective(300px) rotateX(5deg);
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    border-radius: 50px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .cta-button.primary::before {
@@ -2298,10 +2256,17 @@ main {
 }
 
 .cta-button.consultation {
-    background: linear-gradient(145deg, #DAA520 0%, #FFD700 100%);
-    color: #5a4037;
-    border: 2px solid #8B0000;
-    box-shadow: 0 6px 20px rgba(218, 165, 32, 0.4);
+    background: linear-gradient(145deg, 
+        rgba(241, 245, 249, 0.9) 0%, 
+        rgba(248, 250, 252, 0.8) 100%);
+    color: #334155;
+    border: 2px solid rgba(148, 163, 184, 0.4);
+    box-shadow: 
+        0 8px 25px rgba(15, 23, 42, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    border-radius: 50px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
 .cta-button::before {
@@ -3712,9 +3677,8 @@ body {
         align-items: center;
     }
     
-    .discount-badge,
-    .extra-discount {
-        padding: 0.6rem 1.2rem;
+    .discount-badge {
+        padding: 0.6rem 1.5rem;
         font-size: 0.95rem;
         border-radius: 25px;
         width: fit-content;
@@ -3740,16 +3704,16 @@ body {
         margin: 0.8rem 0;
     }
     
-    .guarantee {
-        font-size: 1.2rem;
-        padding: 1rem 1.5rem;
+    .guarantee-text {
+        font-size: 1.1rem;
+        padding: 0.8rem 1.5rem;
         border-radius: 30px;
         margin-top: 1rem;
     }
     
-    .guarantee::before {
+    .guarantee-text::before {
         left: 0.8rem;
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     
     .discount-rate {
