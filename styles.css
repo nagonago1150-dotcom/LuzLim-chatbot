@@ -2119,6 +2119,11 @@ main {
 .price-guarantee {
     text-align: center;
     margin-top: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .guarantee-text {
@@ -3725,11 +3730,18 @@ body {
         margin: 0.8rem 0;
     }
     
+    .price-guarantee {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+    
     .guarantee-text {
         font-size: 1.1rem;
         padding: 0.8rem 1.5rem;
         border-radius: 30px;
-        margin-top: 1rem;
+        margin-top: 0;
+        width: fit-content;
     }
     
     .guarantee-text::before {
