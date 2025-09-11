@@ -2206,24 +2206,24 @@ main {
 
 .cta-button.primary {
     background: linear-gradient(145deg, 
-        #0f172a 0%, 
-        #1e293b 30%, 
-        #334155 70%, 
-        #475569 100%);
+        #8B4513 0%, 
+        #A0522D 30%, 
+        #CD853F 70%, 
+        #DAA520 100%);
     background-size: 300% 300%;
-    color: #f8fafc;
-    border: 2px solid rgba(148, 163, 184, 0.3);
+    color: #ffffff;
+    border: 2px solid rgba(218, 165, 32, 0.4);
     box-shadow: 
-        0 12px 35px rgba(15, 23, 42, 0.25),
-        0 6px 20px rgba(30, 41, 59, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    animation: luxuryButtonGlow 4s ease-in-out infinite;
+        0 12px 35px rgba(139, 69, 19, 0.25),
+        0 6px 20px rgba(160, 82, 45, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    animation: warmButtonGlow 4s ease-in-out infinite;
     position: relative;
     overflow: hidden;
     font-weight: 600;
     letter-spacing: 0.8px;
     border-radius: 50px;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .cta-button.primary::before {
@@ -2244,25 +2244,38 @@ main {
     100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
 }
 
-@keyframes ctaButtonPulse {
-    0%, 100% { 
+@keyframes warmButtonGlow {
+    0% {
         background-position: 0% 50%;
-        box-shadow: 0 6px 20px rgba(139, 0, 0, 0.4);
+        box-shadow: 
+            0 12px 35px rgba(139, 69, 19, 0.25),
+            0 6px 20px rgba(160, 82, 45, 0.15),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
     }
-    50% { 
+    50% {
         background-position: 100% 50%;
-        box-shadow: 0 8px 25px rgba(220, 20, 60, 0.6);
+        box-shadow: 
+            0 15px 40px rgba(139, 69, 19, 0.3),
+            0 8px 25px rgba(160, 82, 45, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.25);
+    }
+    100% {
+        background-position: 0% 50%;
+        box-shadow: 
+            0 12px 35px rgba(139, 69, 19, 0.25),
+            0 6px 20px rgba(160, 82, 45, 0.15),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
     }
 }
 
 .cta-button.consultation {
     background: linear-gradient(145deg, 
-        rgba(241, 245, 249, 0.9) 0%, 
-        rgba(248, 250, 252, 0.8) 100%);
-    color: #334155;
-    border: 2px solid rgba(148, 163, 184, 0.4);
+        rgba(255, 248, 240, 0.95) 0%, 
+        rgba(254, 245, 235, 0.9) 100%);
+    color: #5a4037;
+    border: 2px solid rgba(160, 82, 45, 0.3);
     box-shadow: 
-        0 8px 25px rgba(15, 23, 42, 0.08),
+        0 8px 25px rgba(139, 69, 19, 0.08),
         inset 0 1px 0 rgba(255, 255, 255, 0.6);
     border-radius: 50px;
     font-weight: 500;
@@ -2306,14 +2319,14 @@ main {
 }
 
 .cta-button.primary:hover {
-    transform: perspective(300px) rotateX(10deg) translateY(-5px) scale(1.05);
+    transform: translateY(-3px) scale(1.02);
     box-shadow: 
-        0 15px 40px rgba(139, 0, 0, 0.7),
-        0 0 60px rgba(220, 20, 60, 0.5),
-        inset 0 2px 4px rgba(255, 255, 255, 0.3);
-    background: linear-gradient(145deg, #DC143C 0%, #FF4500 50%, #DC143C 100%);
-    border-color: #FFD700;
-    animation: ctaButtonHover 0.6s ease-out forwards;
+        0 20px 50px rgba(139, 69, 19, 0.35),
+        0 10px 30px rgba(160, 82, 45, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    background-position: 100% 50%;
+    border-color: rgba(218, 165, 32, 0.6);
+    animation: none;
 }
 
 @keyframes ctaButtonHover {
@@ -2323,10 +2336,15 @@ main {
 }
 
 .cta-button.consultation:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(218, 165, 32, 0.6);
-    background: linear-gradient(145deg, #FFD700 0%, #DAA520 100%);
-    border-color: #DC143C;
+    transform: translateY(-2px);
+    box-shadow: 
+        0 12px 35px rgba(139, 69, 19, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    background: linear-gradient(145deg, 
+        rgba(255, 250, 240, 0.98) 0%, 
+        rgba(255, 245, 230, 0.95) 100%);
+    border-color: rgba(160, 82, 45, 0.5);
+    color: #4a2c1a;
 }
 
 #chatbot-trigger {
