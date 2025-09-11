@@ -1951,7 +1951,7 @@ main {
             0 15px 40px rgba(51, 65, 85, 0.08),
             inset 0 1px 0 rgba(255, 255, 255, 0.9),
             inset 0 -1px 0 rgba(148, 163, 184, 0.15),
-            0 0 60px rgba(59, 130, 246, 0.02);
+            0 0 60px rgba(218, 165, 32, 0.02);
         transform: translateY(-2px);
     }
 }
@@ -2036,43 +2036,43 @@ main {
 }
 
 .price-main {
-    font-family: 'Playfair Display', serif;
-    font-size: 7rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 6.5rem;
     font-weight: 800;
     background: linear-gradient(135deg, 
-        #0f172a 0%, 
-        #1e293b 20%,
-        #334155 40%,
-        #475569 60%,
-        #64748b 80%,
-        #94a3b8 100%);
+        #8B4513 0%, 
+        #A0522D 20%,
+        #CD853F 40%,
+        #DAA520 60%,
+        #F4A460 80%,
+        #DEB887 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    letter-spacing: -2px;
+    letter-spacing: -1px;
     display: block;
     font-feature-settings: 'tnum' 1;
     position: relative;
     transform: scale(1);
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    animation: luxuryPriceGlow 4s ease-in-out infinite alternate;
+    animation: warmPriceGlow 4s ease-in-out infinite alternate;
     line-height: 0.9;
 }
 
-@keyframes luxuryPriceGlow {
+@keyframes warmPriceGlow {
     0% {
-        filter: drop-shadow(0 8px 20px rgba(15, 23, 42, 0.15));
+        filter: drop-shadow(0 8px 20px rgba(139, 69, 19, 0.15));
         transform: scale(1);
     }
     100% {
-        filter: drop-shadow(0 12px 30px rgba(30, 41, 59, 0.2));
+        filter: drop-shadow(0 12px 30px rgba(218, 165, 32, 0.2));
         transform: scale(1.01);
     }
 }
 
 .price-main:hover {
     transform: scale(1.02);
-    filter: drop-shadow(0 15px 35px rgba(30, 41, 59, 0.25));
+    filter: drop-shadow(0 15px 35px rgba(160, 82, 45, 0.25));
 }
 
 .price-sub {
@@ -2781,7 +2781,7 @@ body {
     object-fit: cover;
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(139, 82, 52, 0.06);
-    border: 3px solid #ff6b6b;
+    border: 3px solid #CD853F;
 }
 
 .solution-image {
@@ -2852,17 +2852,17 @@ body {
 .concern-dot {
     width: 12px;
     height: 12px;
-    background: linear-gradient(145deg, #DC143C, #FF6B6B);
+    background: linear-gradient(145deg, #8B4513, #CD853F);
     border-radius: 50%;
     margin-right: 1rem;
     flex-shrink: 0;
-    box-shadow: 0 2px 4px rgba(220, 20, 60, 0.4);
+    box-shadow: 0 2px 4px rgba(139, 69, 19, 0.4);
     animation: concernPulse 3s ease-in-out infinite;
 }
 
 @keyframes concernPulse {
     0%, 100% { 
-        box-shadow: 0 2px 4px rgba(220, 20, 60, 0.4);
+        box-shadow: 0 2px 4px rgba(139, 69, 19, 0.4);
         transform: scale(1);
     }
     50% { 
