@@ -1894,6 +1894,56 @@ main {
     z-index: 2;
 }
 
+.regular-price {
+    font-size: 1.2rem;
+    color: #8B4513;
+    text-decoration: line-through;
+    opacity: 0.8;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.discount-info {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.discount-badge {
+    background: linear-gradient(135deg, #DAA520, #FFD700);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(218, 165, 32, 0.3);
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.discount-badge:hover {
+    transform: scale(1.05);
+}
+
+.extra-discount {
+    background: linear-gradient(135deg, #B8860B, #DAA520);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(184, 134, 11, 0.3);
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.extra-discount:hover {
+    transform: scale(1.05);
+}
+
 .price-main {
     font-family: 'Inter', sans-serif;
     font-size: 5.5rem;
