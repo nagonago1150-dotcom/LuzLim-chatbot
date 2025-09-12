@@ -795,31 +795,31 @@ main {
 
 .feature-badge-large {
     background: linear-gradient(145deg, 
-        rgba(139, 82, 52, 0.9) 0%, 
-        rgba(166, 104, 71, 0.85) 50%, 
-        rgba(139, 82, 52, 0.9) 100%);
-    color: #2c1810;
+        rgba(52, 152, 219, 0.9) 0%, 
+        rgba(74, 144, 226, 0.85) 50%, 
+        rgba(52, 152, 219, 0.9) 100%);
+    color: #ffffff;
     padding: 1rem 1.5rem;
     border-radius: 25px;
     font-weight: 600;
     font-size: 0.95rem;
     text-align: center;
     box-shadow: 
-        0 6px 20px rgba(139, 82, 52, 0.12),
-        0 2px 8px rgba(139, 82, 52, 0.08),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(139, 82, 52, 0.15);
+        0 6px 20px rgba(52, 152, 219, 0.25),
+        0 2px 8px rgba(52, 152, 219, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(52, 152, 219, 0.3);
     transition: all 0.3s ease;
     letter-spacing: 0.5px;
-    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .feature-badge-large:hover {
     transform: translateY(-2px);
     box-shadow: 
-        0 8px 25px rgba(139, 82, 52, 0.18),
-        0 3px 12px rgba(139, 82, 52, 0.12),
-        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+        0 8px 25px rgba(52, 152, 219, 0.35),
+        0 3px 12px rgba(52, 152, 219, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 .luzlim-subscription-section {
@@ -850,10 +850,10 @@ main {
 
 .hero-consultation-btn {
     background: linear-gradient(145deg, 
-        rgba(139, 82, 52, 0.95) 0%, 
-        rgba(166, 104, 71, 0.9) 50%, 
-        rgba(139, 82, 52, 0.95) 100%);
-    color: #3e2723;
+        rgba(26, 188, 156, 0.95) 0%, 
+        rgba(46, 204, 113, 0.9) 50%, 
+        rgba(26, 188, 156, 0.95) 100%);
+    color: #ffffff;
     border: none;
     padding: 1.3rem 2.8rem;
     border-radius: 50px;
@@ -862,18 +862,18 @@ main {
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 
-        0 10px 30px rgba(139, 82, 52, 0.2),
-        0 5px 15px rgba(139, 82, 52, 0.1),
+        0 10px 30px rgba(26, 188, 156, 0.3),
+        0 5px 15px rgba(26, 188, 156, 0.2),
         0 0 0 1px rgba(255, 255, 255, 0.3),
-        inset 0 2px 0 rgba(255, 255, 255, 0.25),
-        inset 0 -2px 0 rgba(139, 82, 52, 0.2);
+        inset 0 2px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -2px 0 rgba(26, 188, 156, 0.3);
     font-family: inherit;
     letter-spacing: 1.2px;
     text-transform: uppercase;
     position: relative;
     overflow: hidden;
     transform: translateZ(0);
-    text-shadow: 0 1px 3px rgba(139, 82, 52, 0.08);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
 .hero-consultation-btn::before {
@@ -890,11 +890,11 @@ main {
 .hero-consultation-btn:hover {
     transform: translateY(-4px) scale(1.05);
     box-shadow: 
-        0 12px 35px rgba(218, 165, 32, 0.6),
-        0 6px 18px rgba(139, 82, 52, 0.1),
+        0 12px 35px rgba(26, 188, 156, 0.5),
+        0 6px 18px rgba(46, 204, 113, 0.3),
         inset 0 2px 0 rgba(255, 255, 255, 0.4),
-        inset 0 -2px 0 rgba(139, 82, 52, 0.05);
-    background: linear-gradient(145deg, #FFD700 0%, #DAA520 50%, #FFD700 100%);
+        inset 0 -2px 0 rgba(26, 188, 156, 0.1);
+    background: linear-gradient(145deg, rgba(46, 204, 113, 1) 0%, rgba(26, 188, 156, 1) 50%, rgba(46, 204, 113, 1) 100%);
 }
 
 .hero-consultation-btn:hover::before {
