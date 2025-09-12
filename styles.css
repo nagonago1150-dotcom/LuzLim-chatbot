@@ -1,5 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
+/* Background effects - prevent interference with clicks */
+.water-effects-container,
+.bubble-effects-container,
+.water-ripples,
+.water-droplets,
+.moisture-overlay,
+.ripple,
+.droplet,
+.bubble {
+    pointer-events: none;
+    z-index: -10;
+}
+
+/* Clickable elements hover effects */
+.subscription-offer-image,
+.solution-image,
+.feature-badge-large {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.subscription-offer-image:hover,
+.solution-image:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.feature-badge-large:hover {
+    transform: scale(1.02) translateY(-2px);
+    opacity: 0.95;
+}
+
+.cta-section h3,
+.price-header,
+.discount-badge,
+.price-main-container,
+.price-guarantee {
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    border-radius: 8px;
+}
+
+.cta-section h3:hover,
+.price-header:hover,
+.discount-badge:hover,
+.price-main-container:hover,
+.price-guarantee:hover {
+    transform: translateY(-2px);
+    background-color: rgba(218, 165, 32, 0.1);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -1815,6 +1864,7 @@ main {
             rgba(255, 255, 255, 0.1) 100%
         );
     z-index: 1;
+    pointer-events: none;
 }
 
 .cta-content {
@@ -2205,7 +2255,7 @@ main {
     text-transform: uppercase;
     letter-spacing: 1px;
     position: relative;
-    z-index: 2;
+    z-index: 10;
     overflow: hidden;
     border: none;
     cursor: pointer;
@@ -2314,7 +2364,7 @@ main {
     transition: width 0.3s ease, height 0.3s ease;
     border-radius: 50%;
     pointer-events: none;
-    z-index: 0;
+    z-index: -1;
 }
 
 .cta-button:active::after {

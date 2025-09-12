@@ -593,4 +593,48 @@ document.addEventListener('DOMContentLoaded', function() {
         chatbot.openChat();
         chatbot.showInitialMessage();
     });
+
+    // 購入ページへのリダイレクト関数
+    function redirectToPurchasePage() {
+        const purchaseUrl = 'https://shop.salus-inc.com/lp?u=ts_test_250716_LCP_LUZLIM_SD#chatform';
+        window.open(purchaseUrl, '_blank');
+    }
+
+    // ヒーローセクションの定期便画像をクリック可能にする
+    const subscriptionImage = document.querySelector('.subscription-offer-image');
+    if (subscriptionImage) {
+        subscriptionImage.style.cursor = 'pointer';
+        subscriptionImage.addEventListener('click', redirectToPurchasePage);
+    }
+
+    // 価格セクションの各要素をクリック可能にする
+    const priceElements = [
+        '.cta-section h3',
+        '.price-header',
+        '.discount-badge', 
+        '.price-main-container',
+        '.price-guarantee'
+    ];
+
+    priceElements.forEach(selector => {
+        const element = document.querySelector(selector);
+        if (element) {
+            element.style.cursor = 'pointer';
+            element.addEventListener('click', redirectToPurchasePage);
+        }
+    });
+
+    // 商品ボトル画像をクリック可能にする
+    const solutionImage = document.querySelector('.solution-image');
+    if (solutionImage) {
+        solutionImage.style.cursor = 'pointer';
+        solutionImage.addEventListener('click', redirectToPurchasePage);
+    }
+
+    // ヒーローセクションの特徴バッジをクリック可能にする
+    const featureBadges = document.querySelectorAll('.feature-badge-large');
+    featureBadges.forEach(badge => {
+        badge.style.cursor = 'pointer';
+        badge.addEventListener('click', redirectToPurchasePage);
+    });
 });
