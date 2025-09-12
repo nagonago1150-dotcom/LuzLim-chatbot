@@ -1749,6 +1749,8 @@ main {
         0 0 15px rgba(240, 240, 240, 0.1);
     /* Removed transparent text fill for better readability */
     line-height: 1.4;
+    word-break: keep-all;
+    overflow-wrap: break-word;
 }
 
 @keyframes textSubtleGlow {
@@ -3923,6 +3925,8 @@ body {
         line-height: 1.5;
         word-wrap: break-word;
         white-space: normal;
+        word-break: keep-all;
+        overflow-wrap: break-word;
     }
     
     .benefit-icon {
